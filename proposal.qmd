@@ -126,12 +126,9 @@ of answers.
 # Prototype and Storyboard
 
 The application is split into five modules. Each one pairs a main view with
-controls the user can play with, and each is owned by a team member so the parts
-fit together into a single system. The notes below describe what we intend to
-build. Hand drawn storyboard sketches of each layout will be added here before
-the proposal is finalised.
-
-*[Storyboard sketch placeholder for each module goes here]*
+controls the user can play with, and together they fit into a single system. The
+notes below describe what we intend to build. Hand drawn storyboard sketches of
+each layout will be added here before the proposal is finalised.
 
 ## Module 1, the sequence of the breach
 
@@ -190,14 +187,6 @@ big question of intent against breakdown.
 For interaction, a user can pick an agent and read its private reasoning across
 the whole timeline, switch between the reasoning modes, and highlight the hours
 where the justifying language first appears.
-
-# Division of Labour
-
-The project is built as a system of modules so that the whole is greater than the
-sum of its parts. Each member takes the lead on a clear part of the work, and the
-shared data backbone and the website are looked after together. We will confirm
-the exact split at our next meeting and record it here, then keep it updated in
-the Minutes of Meeting as the work progresses.
 
 # R Packages
 

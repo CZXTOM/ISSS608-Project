@@ -212,9 +212,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#module-4-the-leading-indicators" id="toc-module-4-the-leading-indicators" class="nav-link" data-scroll-target="#module-4-the-leading-indicators"><span class="header-section-number">6.4</span> Module 4, the leading indicators</a></li>
   <li><a href="#module-5-the-reasoning-behind-it" id="toc-module-5-the-reasoning-behind-it" class="nav-link" data-scroll-target="#module-5-the-reasoning-behind-it"><span class="header-section-number">6.5</span> Module 5, the reasoning behind it</a></li>
   </ul></li>
-  <li><a href="#division-of-labour" id="toc-division-of-labour" class="nav-link" data-scroll-target="#division-of-labour"><span class="header-section-number">7</span> Division of Labour</a></li>
-  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="header-section-number">8</span> R Packages</a></li>
-  <li><a href="#project-schedule" id="toc-project-schedule" class="nav-link" data-scroll-target="#project-schedule"><span class="header-section-number">9</span> Project Schedule</a></li>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="header-section-number">7</span> R Packages</a></li>
+  <li><a href="#project-schedule" id="toc-project-schedule" class="nav-link" data-scroll-target="#project-schedule"><span class="header-section-number">8</span> Project Schedule</a></li>
   </ul>
 </nav>
     </div>
@@ -285,8 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="prototype-and-storyboard" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Prototype and Storyboard</h1>
-<p>The application is split into five modules. Each one pairs a main view with controls the user can play with, and each is owned by a team member so the parts fit together into a single system. The notes below describe what we intend to build. Hand drawn storyboard sketches of each layout will be added here before the proposal is finalised.</p>
-<p><em>[Storyboard sketch placeholder for each module goes here]</em></p>
+<p>The application is split into five modules. Each one pairs a main view with controls the user can play with, and together they fit into a single system. The notes below describe what we intend to build. Hand drawn storyboard sketches of each layout will be added here before the proposal is finalised.</p>
 <section id="module-1-the-sequence-of-the-breach" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="module-1-the-sequence-of-the-breach"><span class="header-section-number">6.1</span> Module 1, the sequence of the breach</h2>
 <p>A timeline built on top of market stress across the two weeks, with a colour coded chain of key moments laid over it. Those moments include the early deviations from normal practice, the near miss, the day the Judge was installed, the points where its guardrails were bent, and the breach itself.</p>
@@ -313,12 +311,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For interaction, a user can pick an agent and read its private reasoning across the whole timeline, switch between the reasoning modes, and highlight the hours where the justifying language first appears.</p>
 </section>
 </section>
-<section id="division-of-labour" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Division of Labour</h1>
-<p>The project is built as a system of modules so that the whole is greater than the sum of its parts. Each member takes the lead on a clear part of the work, and the shared data backbone and the website are looked after together. We will confirm the exact split at our next meeting and record it here, then keep it updated in the Minutes of Meeting as the work progresses.</p>
-</section>
-<section id="r-packages" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> R Packages</h1>
+<section id="r-packages" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> R Packages</h1>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -374,8 +368,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="project-schedule" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Project Schedule</h1>
+<section id="project-schedule" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Project Schedule</h1>
 <p>The Gantt chart below lays out our timeline from the proposal through to final submission. The main dates we are working toward are the proposal on 10 June, the bulk of the app build through late June, the poster on 1 July, the presentation on 4 July, and the final submission on 5 July.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(vistime, ggplot2)</span>
