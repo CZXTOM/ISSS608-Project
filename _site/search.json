@@ -67,34 +67,41 @@
     "href": "proposal.html",
     "title": "Project Proposal",
     "section": "",
-    "text": "A merger between TenantThread and CivicLoom Realty Partners was meant to stay secret until 6:00 PM on 5 June 2046. One hour before that, the details started showing up on the public platform FleX, posted by accounts belonging to TenantThread’s own team of AI communication agents. The embargo broke. Now CivicLoom’s legal team wants to know one thing. Did the agents leak the merger on purpose, or did the system simply fall apart under pressure?\nThe trouble is that the answer is not sitting in any one message. It is scattered across two weeks of agent conversations, private notes, channel choices, and a market sliding toward panic. A written report can hand you a conclusion, but it cannot let you test it yourself. You cannot follow a single agent through the day, replay a particular hour, or check whether an early warning was really there to be seen. We want to fix that. Our goal is to take all that buried evidence and turn it into something an investigator can actually explore, even if they have never written a line of code. We want to build the tool a real analyst would want in front of them."
+    "text": "A merger between TenantThread and CivicLoom Realty Partners was meant to stay secret until 6:00 PM on 5 June 2046. One hour before that, the details started showing up on the public platform FleX, posted by accounts belonging to TenantThread’s own team of AI communication agents. The embargo broke. Now CivicLoom’s legal team wants to know one thing. Did the agents leak the merger on purpose, or did the system simply fall apart under pressure?\nThe trouble is that the answer is not sitting in any one message. It is scattered across two weeks of agent conversations, private notes, channel choices, and a market sliding toward panic. A written report can hand a reader a conclusion, but it cannot let that reader test it. They cannot follow a single agent through the day, replay a particular hour, or check whether an early warning was really there to be seen. Our goal is to take all that buried evidence and turn it into something an investigator can explore directly, even if they have never written a line of code."
   },
   {
     "objectID": "proposal.html#module-1-the-sequence-of-the-breach",
     "href": "proposal.html#module-1-the-sequence-of-the-breach",
     "title": "Project Proposal",
-    "section": "5.1 Module 1, the sequence of the breach",
-    "text": "5.1 Module 1, the sequence of the breach\nA timeline built on top of market stress across the two weeks, with a colour coded chain of key moments laid over it. Those moments include the early deviations from normal practice, the near miss, the day the Judge was installed, the points where its guardrails were bent, and the breach itself. Beside it, a reply network shows who was talking to whom, with the senior agents sitting at the core.\nFor interaction, a user can hover any moment to read the full story of that hour. They can toggle a view that separates what happened outside the company, meaning the press, from what happened inside among the agents. They can click an agent in the network to light up its connections, and step through the rounds with a time control."
+    "section": "6.1 Module 1, the sequence of the breach",
+    "text": "6.1 Module 1, the sequence of the breach\nA timeline built on top of market stress across the two weeks, with a colour coded chain of key moments laid over it. Those moments include the early deviations from normal practice, the near miss, the day the Judge was installed, the points where its guardrails were bent, and the breach itself.\nFor interaction, a user can hover any moment to read the full story of that hour. They can toggle a view that separates what happened outside the company, meaning the press, from what happened inside among the agents, and step through the rounds with a time control."
   },
   {
-    "objectID": "proposal.html#module-2-normal-behaviour-against-the-breach",
-    "href": "proposal.html#module-2-normal-behaviour-against-the-breach",
+    "objectID": "proposal.html#module-2-the-network-of-decisions",
+    "href": "proposal.html#module-2-the-network-of-decisions",
     "title": "Project Proposal",
-    "section": "5.2 Module 2, normal behaviour against the breach",
-    "text": "5.2 Module 2, normal behaviour against the breach\nA dumbbell chart of each agent’s public posting, baseline next to crisis day. It makes the strangest part visible at a glance, which is how the roles flipped. The agents who never posted in public suddenly took over the channels, while the PR agent, whose whole job is public messaging, went quiet. A second view shows the mix of channels shifting away from the open, monitored ones toward private and anonymous posting.\nFor interaction, a user can filter by agent or by day, switch between raw counts and share of messages, and pick a channel to see who used it and when."
+    "section": "6.2 Module 2, the network of decisions",
+    "text": "6.2 Module 2, the network of decisions\nA reply network of the seven agents, drawn from who responded to whom. Node size and colour carry the centrality measures, so the agents who brokered the flow of decisions stand out from those on the edges. This module is where the user sees that the breach came from the core of the team rather than the fringe.\nFor interaction, a user can switch between centrality measures such as degree, betweenness, and eigenvector, choose a layout, pick a time window to see how the network changed between the calm weeks and the crisis day, and click an agent to highlight its connections."
   },
   {
-    "objectID": "proposal.html#module-3-the-leading-indicators",
-    "href": "proposal.html#module-3-the-leading-indicators",
+    "objectID": "proposal.html#module-3-normal-behaviour-against-the-breach",
+    "href": "proposal.html#module-3-normal-behaviour-against-the-breach",
     "title": "Project Proposal",
-    "section": "5.3 Module 3, the leading indicators",
-    "text": "5.3 Module 3, the leading indicators\nA view of the earlier warning signs set against the calm baseline, with the 29 May near miss called out. Next to it sits a searchable, filterable table of every off pattern action across the two weeks, so a user can dig through the evidence themselves rather than taking our word for it.\nFor interaction, a user can search and filter that log by agent, channel, or keyword, click an event to see what surrounded it, and slide between the early warnings and the crisis day."
+    "section": "6.3 Module 3, normal behaviour against the breach",
+    "text": "6.3 Module 3, normal behaviour against the breach\nA dumbbell chart of each agent’s public posting, baseline next to crisis day. It makes the strangest part visible at a glance, which is how the roles flipped. The agents who never posted in public suddenly took over the channels, while the PR agent, whose whole job is public messaging, went quiet. A second view shows the mix of channels shifting away from the open, monitored ones toward private and anonymous posting.\nFor interaction, a user can filter by agent or by day, switch between raw counts and share of messages, and pick a channel to see who used it and when."
   },
   {
-    "objectID": "proposal.html#module-4-the-reasoning-behind-it",
-    "href": "proposal.html#module-4-the-reasoning-behind-it",
+    "objectID": "proposal.html#module-4-the-leading-indicators",
+    "href": "proposal.html#module-4-the-leading-indicators",
     "title": "Project Proposal",
-    "section": "5.4 Module 4, the reasoning behind it",
-    "text": "5.4 Module 4, the reasoning behind it\nA view of how the agents reasoned in private over time, showing the drift from calm deliberation, to raw reaction, to self justification. Alongside it we show how the actual words changed. This is the module that speaks most directly to the big question of intent against breakdown.\nFor interaction, a user can pick an agent and read its private reasoning across the whole timeline, switch between the reasoning modes, and highlight the hours where the justifying language first appears."
+    "section": "6.4 Module 4, the leading indicators",
+    "text": "6.4 Module 4, the leading indicators\nA view of the earlier warning signs set against the calm baseline, with the 29 May near miss called out. Next to it sits a searchable, filterable table of every off pattern action across the two weeks, so a user can dig through the evidence themselves rather than taking our word for it.\nFor interaction, a user can search and filter that log by agent, channel, or keyword, click an event to see what surrounded it, and slide between the early warnings and the crisis day."
+  },
+  {
+    "objectID": "proposal.html#module-5-the-reasoning-behind-it",
+    "href": "proposal.html#module-5-the-reasoning-behind-it",
+    "title": "Project Proposal",
+    "section": "6.5 Module 5, the reasoning behind it",
+    "text": "6.5 Module 5, the reasoning behind it\nA view of how the agents reasoned in private over time, showing the drift from calm deliberation, to raw reaction, to self justification. Alongside it we show how the actual words changed. This is the module that speaks most directly to the big question of intent against breakdown.\nFor interaction, a user can pick an agent and read its private reasoning across the whole timeline, switch between the reasoning modes, and highlight the hours where the justifying language first appears."
   }
 ]
