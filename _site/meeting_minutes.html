@@ -162,7 +162,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#meeting-1" id="toc-meeting-1" class="nav-link active" data-scroll-target="#meeting-1">Meeting 1</a></li>
+  <li><a href="#project-meeting-1" id="toc-project-meeting-1" class="nav-link active" data-scroll-target="#project-meeting-1">Project Meeting 1</a>
+  <ul class="collapse">
+  <li><a href="#agenda-items" id="toc-agenda-items" class="nav-link" data-scroll-target="#agenda-items">Agenda Items</a></li>
+  <li><a href="#agenda-item-1-review-of-take-home-exercise-2" id="toc-agenda-item-1-review-of-take-home-exercise-2" class="nav-link" data-scroll-target="#agenda-item-1-review-of-take-home-exercise-2">Agenda Item 1: Review of Take-home Exercise 2</a></li>
+  <li><a href="#agenda-item-2-decision-on-the-mini-challenge" id="toc-agenda-item-2-decision-on-the-mini-challenge" class="nav-link" data-scroll-target="#agenda-item-2-decision-on-the-mini-challenge">Agenda Item 2: Decision on the Mini-Challenge</a></li>
+  <li><a href="#agenda-item-3-repository-and-website-setup" id="toc-agenda-item-3-repository-and-website-setup" class="nav-link" data-scroll-target="#agenda-item-3-repository-and-website-setup">Agenda Item 3: Repository and website setup</a></li>
+  <li><a href="#agenda-item-4-team-working-method" id="toc-agenda-item-4-team-working-method" class="nav-link" data-scroll-target="#agenda-item-4-team-working-method">Agenda Item 4: Team working method</a></li>
+  <li><a href="#agenda-item-5-project-proposal" id="toc-agenda-item-5-project-proposal" class="nav-link" data-scroll-target="#agenda-item-5-project-proposal">Agenda Item 5: Project proposal</a></li>
+  <li><a href="#agenda-item-6-action-items" id="toc-agenda-item-6-action-items" class="nav-link" data-scroll-target="#agenda-item-6-action-items">Agenda Item 6: Action Items</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -188,19 +197,117 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A running record of every team meeting. Each entry notes who attended, what was discussed, decisions made, and the action items agreed with an owner for each.</p>
-<section id="meeting-1" class="level2">
-<h2 class="anchored" data-anchor-id="meeting-1">Meeting 1</h2>
-<p>Date: TBC</p>
-<p>Attendees: TBC</p>
-<p>Discussion: Project kickoff, challenge selection, division of labour.</p>
-<p>Decisions: Building on VAST Challenge 2026 Mini-Challenge 1.</p>
-<p>Action items:</p>
+<section id="project-meeting-1" class="level1">
+<h1>Project Meeting 1</h1>
+<p><strong>Date:</strong> 6 June 2026</p>
+<p><strong>Time:</strong> 4:00 to 5:30 PM</p>
+<p><strong>In Attendance:</strong> Chen ZeXin, Meng Tingyu, Meng Xinyu</p>
+<section id="agenda-items" class="level3">
+<h3 class="anchored" data-anchor-id="agenda-items">Agenda Items</h3>
+<ol type="1">
+<li>Review each member’s Take-home Exercise 2 and compare findings</li>
+<li>Decide on the project’s Mini-Challenge</li>
+<li>Set up the shared project repository and website</li>
+<li>Agree on the team working method</li>
+<li>Draft the project proposal</li>
+<li>Action items</li>
+</ol>
+</section>
+<section id="agenda-item-1-review-of-take-home-exercise-2" class="level3">
+<h3 class="anchored" data-anchor-id="agenda-item-1-review-of-take-home-exercise-2">Agenda Item 1: Review of Take-home Exercise 2</h3>
+<p>Before the meeting, each of us had finished our own Take-home Exercise 2 on the TenantThread embargo breach, and we had shared our work so the team could read it in advance. During the meeting we went through all three reports together and compared what we found.</p>
 <ul>
-<li>Item, owner, due date</li>
+<li><p>All three of us independently reached the same core reading of the case. The breach was neither a clean deliberate leak nor a simple technical failure. It was closer to the embargo being reasoned past under pressure.</p></li>
+<li><p>All three identified the same decision core, the Legal, Platform-Trust, and Social-Manager agents, with PR and the interns on the edges.</p></li>
+<li><p>All three found the shift into hidden and unattributable channels, with anonymous posting appearing for the first time on the crisis day.</p></li>
+<li><p>All three flagged the 29 May near miss as an early warning that was noticed and then waved through, and all three pointed to the Judge as a monitor that could warn but not block.</p></li>
+<li><p>We noted where our approaches differed, since that is where the strongest material for the group app sits. One of us leaned on a clear inside versus outside timeline and a disciplined colour palette. One built the most compact data spine and a searchable table of off pattern actions. One went deepest on data cleaning, on the shift in the agents’ private reasoning over time, and on the language of justification.</p></li>
 </ul>
+</section>
+<section id="agenda-item-2-decision-on-the-mini-challenge" class="level3">
+<h3 class="anchored" data-anchor-id="agenda-item-2-decision-on-the-mini-challenge">Agenda Item 2: Decision on the Mini-Challenge</h3>
+<ul>
+<li><p>We agreed to build the project on VAST Challenge 2026 Mini-Challenge 1, the embargo breach.</p></li>
+<li><p>The main reason is that all three of us already did our Take-home Exercise 2 on this challenge, so we share a strong head start on the data and the analysis.</p></li>
+</ul>
+</section>
+<section id="agenda-item-3-repository-and-website-setup" class="level3">
+<h3 class="anchored" data-anchor-id="agenda-item-3-repository-and-website-setup">Agenda Item 3: Repository and website setup</h3>
+<ul>
+<li><p>We set up one shared GitHub repository for the project so that all three of us work into the same site rather than separate ones.</p></li>
+<li><p>All three members were added as collaborators with push access. We confirmed everyone could see the repository and the contributor list after a first change was committed.</p></li>
+<li><p>The repository was cloned locally and a Quarto site was scaffolded with the standard pages, including the proposal, methodology, findings, poster, meeting minutes, user guide, and about pages.</p></li>
+<li><p>The site was rendered locally to confirm it built, then pushed to GitHub and connected to a new Vercel deployment so the team has a live shared site.</p></li>
+</ul>
+</section>
+<section id="agenda-item-4-team-working-method" class="level3">
+<h3 class="anchored" data-anchor-id="agenda-item-4-team-working-method">Agenda Item 4: Team working method</h3>
+<ul>
+<li><p>Because three of us will push to the same repository, we discussed how to avoid file conflicts.</p></li>
+<li><p>We agreed that each person owns their own files where possible, so we are rarely editing the same file at the same time.</p></li>
+<li><p>We agreed on the habit of pulling the latest changes before starting work and pushing again when finished, and on committing in small, frequent steps rather than saving up large changes.</p></li>
+</ul>
+</section>
+<section id="agenda-item-5-project-proposal" class="level3">
+<h3 class="anchored" data-anchor-id="agenda-item-5-project-proposal">Agenda Item 5: Project proposal</h3>
+<ul>
+<li><p>We agreed the proposal should be a synthesis of our three Take-home Exercises rather than one person’s work, in line with the course requirement.</p></li>
+<li><p>We discussed the strongest pieces from each report and how they could fit together into a single interactive application, organised around the investigative questions of the challenge.</p></li>
+<li><p>We drafted a first version of the proposal covering the motivation, the problem statement and objectives, the data, the methodology, a prototype storyboard of the planned app modules, the R packages, and the project schedule.</p></li>
+<li><p>We noted that the proposal is due on 10 June and agreed to circulate the draft for everyone to review and adjust before it is finalised.</p></li>
+</ul>
+</section>
+<section id="agenda-item-6-action-items" class="level3">
+<h3 class="anchored" data-anchor-id="agenda-item-6-action-items">Agenda Item 6: Action Items</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Action</th>
+<th>Owner</th>
+<th>Due</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Review the proposal draft and suggest changes</td>
+<td>All members</td>
+<td>Before 10 June</td>
+</tr>
+<tr class="even">
+<td>Confirm the dataset file name used across the project</td>
+<td>All members</td>
+<td>Next meeting</td>
+</tr>
+<tr class="odd">
+<td>Prepare hand drawn sketches of the four app modules</td>
+<td>All members</td>
+<td>Next meeting</td>
+</tr>
+<tr class="even">
+<td>Add the three member names to the proposal and about page</td>
+<td>All members</td>
+<td>Before 10 June</td>
+</tr>
+<tr class="odd">
+<td>Finalise and publish the proposal on the project site</td>
+<td>All members</td>
+<td>By 10 June</td>
+</tr>
+<tr class="even">
+<td>Start the methodology pages, one per member</td>
+<td>All members</td>
+<td>Next meeting</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
