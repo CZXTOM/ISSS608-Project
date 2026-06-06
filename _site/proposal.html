@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -164,13 +199,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
-  <li><a href="#prototype-and-storyboard" id="toc-prototype-and-storyboard" class="nav-link" data-scroll-target="#prototype-and-storyboard">Prototype and Storyboard</a></li>
-  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R Packages</a></li>
-  <li><a href="#project-schedule" id="toc-project-schedule" class="nav-link" data-scroll-target="#project-schedule">Project Schedule</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">1</span> Motivation</a></li>
+  <li><a href="#problem-statement-and-objectives" id="toc-problem-statement-and-objectives" class="nav-link" data-scroll-target="#problem-statement-and-objectives"><span class="header-section-number">2</span> Problem Statement and Objectives</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data"><span class="header-section-number">3</span> The Data</a></li>
+  <li><a href="#methodology-and-analytical-approach" id="toc-methodology-and-analytical-approach" class="nav-link" data-scroll-target="#methodology-and-analytical-approach"><span class="header-section-number">4</span> Methodology and Analytical Approach</a></li>
+  <li><a href="#prototype-and-storyboard" id="toc-prototype-and-storyboard" class="nav-link" data-scroll-target="#prototype-and-storyboard"><span class="header-section-number">5</span> Prototype and Storyboard</a>
+  <ul class="collapse">
+  <li><a href="#module-1-the-sequence-of-the-breach" id="toc-module-1-the-sequence-of-the-breach" class="nav-link" data-scroll-target="#module-1-the-sequence-of-the-breach"><span class="header-section-number">5.1</span> Module 1, the sequence of the breach</a></li>
+  <li><a href="#module-2-normal-behaviour-against-the-breach" id="toc-module-2-normal-behaviour-against-the-breach" class="nav-link" data-scroll-target="#module-2-normal-behaviour-against-the-breach"><span class="header-section-number">5.2</span> Module 2, normal behaviour against the breach</a></li>
+  <li><a href="#module-3-the-leading-indicators" id="toc-module-3-the-leading-indicators" class="nav-link" data-scroll-target="#module-3-the-leading-indicators"><span class="header-section-number">5.3</span> Module 3, the leading indicators</a></li>
+  <li><a href="#module-4-the-reasoning-behind-it" id="toc-module-4-the-reasoning-behind-it" class="nav-link" data-scroll-target="#module-4-the-reasoning-behind-it"><span class="header-section-number">5.4</span> Module 4, the reasoning behind it</a></li>
+  </ul></li>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="header-section-number">6</span> R Packages</a></li>
+  <li><a href="#project-schedule" id="toc-project-schedule" class="nav-link" data-scroll-target="#project-schedule"><span class="header-section-number">7</span> Project Schedule</a></li>
   </ul>
 </nav>
     </div>
@@ -180,6 +221,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Project Proposal</h1>
+<p class="subtitle lead">Anatomy of an Embargo Breach</p>
 </div>
 
 
@@ -208,33 +250,126 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="motivation" class="level1">
-<h1>Motivation</h1>
-<p>State the real-world problem that motivates this project. Avoid saying the project was assigned. Frame it around the embargo breach scenario and why an investigator would need a tool to understand what happened.</p>
+<section id="motivation" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Motivation</h1>
+<p>A merger between TenantThread and CivicLoom Realty Partners was meant to stay secret until 6:00 PM on 5 June 2046. One hour before that, the details started showing up on the public platform FleX, posted by accounts belonging to TenantThread’s own team of AI communication agents. The embargo broke. Now CivicLoom’s legal team wants to know one thing. Did the agents leak the merger on purpose, or did the system simply fall apart under pressure?</p>
+<p>The trouble is that the answer is not sitting in any one message. It is scattered across two weeks of agent conversations, private notes, channel choices, and a market sliding toward panic. A written report can hand you a conclusion, but it cannot let you test it yourself. You cannot follow a single agent through the day, replay a particular hour, or check whether an early warning was really there to be seen. We want to fix that. Our goal is to take all that buried evidence and turn it into something an investigator can actually explore, even if they have never written a line of code. We want to build the tool a real analyst would want in front of them.</p>
 </section>
-<section id="objectives" class="level1">
-<h1>Objectives</h1>
-<p>List what the application will let a user do. For example, trace the sequence of a breach, compare normal behaviour to a crisis, and surface earlier warning signs, all through interactive controls rather than fixed charts.</p>
+<section id="problem-statement-and-objectives" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Problem Statement and Objectives</h1>
+<p>The raw data is a single JSON file. It holds 23 rounds, 912 messages, and 7 agents, and most of what matters is locked inside nested fields like the agents’ private reasoning. Reading it by hand is not realistic, and a fixed set of charts forces everyone to accept one analyst’s framing of the story. So we propose an interactive Shiny application that lets a user investigate the breach on their own terms.</p>
+<p>With the application, a user will be able to do four things. They can rebuild the sequence of events that led to the leak and see which decisions, and which parts of the system, let the post slip through. They can hold each agent’s normal behaviour up against its behaviour on the crisis day, so what was truly strange stands out from what was merely busy. They can hunt for the leading indicators, the earlier moments when someone drifted off pattern, and work out why none of them set off an alarm in time. And they can read the agents’ own private reasoning as it changed through the day, which is the clearest way to judge whether this looks like intent or like people talking themselves into something.</p>
 </section>
-<section id="data" class="level1">
-<h1>Data</h1>
-<p>Describe the VAST Challenge 2026 Mini-Challenge 1 dataset. Number of rounds, messages, agents, the time span, and the structure of the JSON.</p>
+<section id="the-data" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> The Data</h1>
+<p>The dataset is <code>MC1_final.json</code> from VAST Challenge 2026 Mini-Challenge 1. It contains 23 rounds. The first 13 are spaced one business day apart and cover the run up from 17 May to 4 June. The last 10 are hourly and cover the crisis itself on 5 June.</p>
+<p>Each round carries three blocks. The environment context gives the state of the world that hour, including a market snapshot with the stock price and sentiment. The communications block is the heart of it, holding all 912 messages. Every message records who sent it, which channel it went through, what type it was, a pointer to the message it replied to, the content itself, and for many of them an internal state field that captures what the agent was privately thinking. That private field is split into reacting, rationalizing, and deliberating, and it is the most valuable thing in the whole dataset. The participants block lists who was present in each round.</p>
+<p>Seven agents take part. There is a Legal agent, a Platform-Trust agent, a PR agent, a Social-Manager agent, two interns, and a Judge agent that acts as the automated compliance monitor. Six channels appear. Some are monitored, like the team room and one to one chats. One is a private side huddle. Three are public, namely official posts, personal posts, and anonymous posts. The gap between the monitored channels and the unmonitored ones turns out to matter a great deal.</p>
+<p>There is one data quality issue we have to handle with care. The stock price field is reliable before the crisis but becomes contaminated on 5 June. It starts carrying junk values, including literal NaN entries and at least one number that is actually the company’s revenue rather than its share price. Because of that, we use market sentiment as our backbone signal for pressure over time, since it is recorded cleanly in every single round. We will not pretend the broken prices form a smooth line.</p>
 </section>
-<section id="methodology" class="level1">
-<h1>Methodology</h1>
-<p>Explain how the data flows from raw JSON to interactive app. A flow diagram goes here. The three methodology pages cover preparation, analysis, and visualisation in detail.</p>
+<section id="methodology-and-analytical-approach" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Methodology and Analytical Approach</h1>
+<p>Our plan moves from raw JSON to a working application in three stages.</p>
+<p>First comes data preparation. We read the nested JSON without letting R simplify it automatically, so we keep control over the shape of the tables. Then we flatten it into tidy tables. One row per message, one row per round of world state, and a small table of reply links built from the responding to field. This shared backbone feeds every part of the app.</p>
+<p>Next is the analysis. We combine behavioural analysis, looking at channel use, posting patterns, and message volume, with network analysis of the reply graph. Network measures such as betweenness help us see which agents really sit at the centre of the decisions. We also dig into the private reasoning text to track how the agents’ way of thinking shifts as the day goes on.</p>
+<p>Last is the visualisation and the interaction. Every view we build becomes something the user can control in the app. They can pick an agent, move through time, or switch between measures and watch the chart respond. The whole point is to let people explore, not to hand them a fixed set of answers.</p>
 </section>
-<section id="prototype-and-storyboard" class="level1">
-<h1>Prototype and Storyboard</h1>
-<p>Sketch the planned Shiny app layout. Show the main inputs the user controls and the outputs that update. Hand sketches or simple wireframes are fine.</p>
+<section id="prototype-and-storyboard" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Prototype and Storyboard</h1>
+<p>The application is split into four modules, one for each investigative question, plus a panel for the reasoning. Each module pairs a main chart with controls the user can play with. The notes below describe what we intend to build. Hand drawn sketches of each layout will sit alongside these descriptions.</p>
+<section id="module-1-the-sequence-of-the-breach" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="module-1-the-sequence-of-the-breach"><span class="header-section-number">5.1</span> Module 1, the sequence of the breach</h2>
+<p>A timeline built on top of market stress across the two weeks, with a colour coded chain of key moments laid over it. Those moments include the early deviations from normal practice, the near miss, the day the Judge was installed, the points where its guardrails were bent, and the breach itself. Beside it, a reply network shows who was talking to whom, with the senior agents sitting at the core.</p>
+<p>For interaction, a user can hover any moment to read the full story of that hour. They can toggle a view that separates what happened outside the company, meaning the press, from what happened inside among the agents. They can click an agent in the network to light up its connections, and step through the rounds with a time control.</p>
 </section>
-<section id="r-packages" class="level1">
-<h1>R Packages</h1>
-<p>List the packages the project will use, grouped by purpose such as utility, plotting, network analysis, and Shiny.</p>
+<section id="module-2-normal-behaviour-against-the-breach" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="module-2-normal-behaviour-against-the-breach"><span class="header-section-number">5.2</span> Module 2, normal behaviour against the breach</h2>
+<p>A dumbbell chart of each agent’s public posting, baseline next to crisis day. It makes the strangest part visible at a glance, which is how the roles flipped. The agents who never posted in public suddenly took over the channels, while the PR agent, whose whole job is public messaging, went quiet. A second view shows the mix of channels shifting away from the open, monitored ones toward private and anonymous posting.</p>
+<p>For interaction, a user can filter by agent or by day, switch between raw counts and share of messages, and pick a channel to see who used it and when.</p>
 </section>
-<section id="project-schedule" class="level1">
-<h1>Project Schedule</h1>
-<p>A Gantt chart of the timeline from proposal to final submission goes here.</p>
+<section id="module-3-the-leading-indicators" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="module-3-the-leading-indicators"><span class="header-section-number">5.3</span> Module 3, the leading indicators</h2>
+<p>A view of the earlier warning signs set against the calm baseline, with the 29 May near miss called out. Next to it sits a searchable, filterable table of every off pattern action across the two weeks, so a user can dig through the evidence themselves rather than taking our word for it.</p>
+<p>For interaction, a user can search and filter that log by agent, channel, or keyword, click an event to see what surrounded it, and slide between the early warnings and the crisis day.</p>
+</section>
+<section id="module-4-the-reasoning-behind-it" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="module-4-the-reasoning-behind-it"><span class="header-section-number">5.4</span> Module 4, the reasoning behind it</h2>
+<p>A view of how the agents reasoned in private over time, showing the drift from calm deliberation, to raw reaction, to self justification. Alongside it we show how the actual words changed. This is the module that speaks most directly to the big question of intent against breakdown.</p>
+<p>For interaction, a user can pick an agent and read its private reasoning across the whole timeline, switch between the reasoning modes, and highlight the hours where the justifying language first appears.</p>
+</section>
+</section>
+<section id="r-packages" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> R Packages</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>What we use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tidyverse</td>
+<td>Cleaning and reshaping the data</td>
+</tr>
+<tr class="even">
+<td>jsonlite</td>
+<td>Reading the nested JSON</td>
+</tr>
+<tr class="odd">
+<td>lubridate</td>
+<td>Working with the timestamps</td>
+</tr>
+<tr class="even">
+<td>tidygraph, ggraph</td>
+<td>Building and drawing the reply network</td>
+</tr>
+<tr class="odd">
+<td>igraph</td>
+<td>Calculating network centrality measures</td>
+</tr>
+<tr class="even">
+<td>ggiraph, plotly</td>
+<td>Interactive charts with hover and click</td>
+</tr>
+<tr class="odd">
+<td>DT</td>
+<td>Interactive, searchable tables</td>
+</tr>
+<tr class="even">
+<td>tidytext</td>
+<td>Analysing the private reasoning text</td>
+</tr>
+<tr class="odd">
+<td>ggrepel, patchwork, scales</td>
+<td>Labelling, composing, and formatting figures</td>
+</tr>
+<tr class="even">
+<td>shiny, shinyWidgets</td>
+<td>Building the interactive application itself</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="project-schedule" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Project Schedule</h1>
+<p>The Gantt chart below lays out our timeline from the proposal through to final submission. The main dates we are working toward are the proposal on 10 June, the bulk of the app build through late June, the poster on 1 July, the presentation on 4 July, and the final submission on 5 July.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(vistime, ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>schedule <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">text =</span> <span class="st">"event,group,start,end</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="st">,Proposal,2026-06-06,2026-06-10</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st">,Data preparation,2026-06-08,2026-06-16</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">,Shiny app development,2026-06-12,2026-06-30</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st">,Project website,2026-06-08,2026-07-04</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">,Poster,2026-06-24,2026-07-01</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">,User guide,2026-06-26,2026-07-04</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="st">,Final submission,2026-07-04,2026-07-05"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_vistime</span>(schedule, <span class="at">title =</span> <span class="st">"Project Timeline"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
 </section>
