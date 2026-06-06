@@ -1,0 +1,13 @@
+---
+title: "Anatomy of an Embargo Breach"
+subtitle: "A Visual Analytics application for VAST Challenge 2026 Mini-Challenge 1"
+---
+
+Welcome to our ISSS608 Visual Analytics project.
+
+This site documents our team's work building an interactive Shiny application
+that investigates how a corporate merger embargo was broken by a team of AI
+communication agents. Use the navigation bar to move through our proposal,
+methodology, findings, and the application itself.
+
+Our challenge is based on the VAST Challenge 2026 Mini-Challenge 1.

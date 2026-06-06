@@ -1,0 +1,43 @@
+---
+title: "Project Proposal"
+author: "Team"
+date: "last-modified"
+toc: true
+---
+
+# Motivation
+
+State the real-world problem that motivates this project. Avoid saying the
+project was assigned. Frame it around the embargo breach scenario and why an
+investigator would need a tool to understand what happened.
+
+# Objectives
+
+List what the application will let a user do. For example, trace the sequence of
+a breach, compare normal behaviour to a crisis, and surface earlier warning
+signs, all through interactive controls rather than fixed charts.
+
+# Data
+
+Describe the VAST Challenge 2026 Mini-Challenge 1 dataset. Number of rounds,
+messages, agents, the time span, and the structure of the JSON.
+
+# Methodology
+
+Explain how the data flows from raw JSON to interactive app. A flow diagram
+goes here. The three methodology pages cover preparation, analysis, and
+visualisation in detail.
+
+# Prototype and Storyboard
+
+Sketch the planned Shiny app layout. Show the main inputs the user controls and
+the outputs that update. Hand sketches or simple wireframes are fine.
+
+# R Packages
+
+List the packages the project will use, grouped by purpose such as utility,
+plotting, network analysis, and Shiny.
+
+# Project Schedule
+
+A Gantt chart of the timeline from proposal to final submission goes here.

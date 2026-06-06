@@ -1,0 +1,42 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Anatomy of an Embargo Breach"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: proposal.qmd
+        text: Proposal
+      - text: Methodology
+        menu:
+          - href: methodology/data_preparation.qmd
+            text: Data Preparation
+          - href: methodology/analysis.qmd
+            text: Analysis
+          - href: methodology/visualisation.qmd
+            text: Visualisation
+      - href: findings.qmd
+        text: Findings
+      - href: poster.qmd
+        text: Poster
+      - href: meeting_minutes.qmd
+        text: Meeting Minutes
+      - href: user_guide.qmd
+        text: User Guide
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/CZXTOM/ISSS608-Project
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+execute:
+  freeze: auto

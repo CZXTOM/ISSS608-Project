@@ -1,0 +1,7 @@
+---
+title: "Findings"
+toc: true
+---
+
+The key results our application surfaces about the embargo breach. This section
+grows as the project develops.

@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "findings.html",
+    "href": "findings.html",
+    "title": "Findings",
+    "section": "",
+    "text": "The key results our application surfaces about the embargo breach. This section grows as the project develops."
+  },
+  {
+    "objectID": "user_guide.html",
+    "href": "user_guide.html",
+    "title": "User Guide",
+    "section": "",
+    "text": "A step-by-step guide to using the Shiny application. Added once the app takes shape."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "The Team",
+    "section": "",
+    "text": "Introduce the team members and their roles here."
+  },
+  {
+    "objectID": "methodology/analysis.html",
+    "href": "methodology/analysis.html",
+    "title": "Analysis",
+    "section": "",
+    "text": "The analytical methods used, including any network measures such as betweenness and closeness, and how they help answer the challenge questions."
+  },
+  {
+    "objectID": "methodology/data_preparation.html",
+    "href": "methodology/data_preparation.html",
+    "title": "Data Preparation",
+    "section": "",
+    "text": "How the raw Mini-Challenge 1 JSON is loaded, flattened, and cleaned into tidy tables ready for analysis and the app."
+  },
+  {
+    "objectID": "poster.html",
+    "href": "poster.html",
+    "title": "Poster",
+    "section": "",
+    "text": "Our project poster will be embedded here once complete. Due 1 July 2026."
+  },
+  {
+    "objectID": "methodology/visualisation.html",
+    "href": "methodology/visualisation.html",
+    "title": "Visualisation",
+    "section": "",
+    "text": "The visual encodings and interactive techniques used in the application, and the reasoning behind each design choice."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Anatomy of an Embargo Breach",
+    "section": "",
+    "text": "Welcome to our ISSS608 Visual Analytics project.\nThis site documents our team’s work building an interactive Shiny application that investigates how a corporate merger embargo was broken by a team of AI communication agents. Use the navigation bar to move through our proposal, methodology, findings, and the application itself.\nOur challenge is based on the VAST Challenge 2026 Mini-Challenge 1."
+  },
+  {
+    "objectID": "meeting_minutes.html",
+    "href": "meeting_minutes.html",
+    "title": "Meeting Minutes",
+    "section": "",
+    "text": "A running record of every team meeting. Each entry notes who attended, what was discussed, decisions made, and the action items agreed with an owner for each."
+  },
+  {
+    "objectID": "meeting_minutes.html#meeting-1",
+    "href": "meeting_minutes.html#meeting-1",
+    "title": "Meeting Minutes",
+    "section": "Meeting 1",
+    "text": "Meeting 1\nDate: TBC\nAttendees: TBC\nDiscussion: Project kickoff, challenge selection, division of labour.\nDecisions: Building on VAST Challenge 2026 Mini-Challenge 1.\nAction items:\n\nItem, owner, due date"
+  },
+  {
+    "objectID": "proposal.html",
+    "href": "proposal.html",
+    "title": "Project Proposal",
+    "section": "",
+    "text": "Motivation\nState the real-world problem that motivates this project. Avoid saying the project was assigned. Frame it around the embargo breach scenario and why an investigator would need a tool to understand what happened.\n\n\nObjectives\nList what the application will let a user do. For example, trace the sequence of a breach, compare normal behaviour to a crisis, and surface earlier warning signs, all through interactive controls rather than fixed charts.\n\n\nData\nDescribe the VAST Challenge 2026 Mini-Challenge 1 dataset. Number of rounds, messages, agents, the time span, and the structure of the JSON.\n\n\nMethodology\nExplain how the data flows from raw JSON to interactive app. A flow diagram goes here. The three methodology pages cover preparation, analysis, and visualisation in detail.\n\n\nPrototype and Storyboard\nSketch the planned Shiny app layout. Show the main inputs the user controls and the outputs that update. Hand sketches or simple wireframes are fine.\n\n\nR Packages\nList the packages the project will use, grouped by purpose such as utility, plotting, network analysis, and Shiny.\n\n\nProject Schedule\nA Gantt chart of the timeline from proposal to final submission goes here."
+  }
+]

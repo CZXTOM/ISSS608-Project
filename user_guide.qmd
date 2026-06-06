@@ -1,0 +1,7 @@
+---
+title: "User Guide"
+toc: true
+---
+
+A step-by-step guide to using the Shiny application. Added once the app takes
+shape.

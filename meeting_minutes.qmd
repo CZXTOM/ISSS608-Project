@@ -1,0 +1,21 @@
+---
+title: "Meeting Minutes"
+toc: true
+---
+
+A running record of every team meeting. Each entry notes who attended, what was
+discussed, decisions made, and the action items agreed with an owner for each.
+
+## Meeting 1
+
+Date: TBC
+
+Attendees: TBC
+
+Discussion: Project kickoff, challenge selection, division of labour.
+
+Decisions: Building on VAST Challenge 2026 Mini-Challenge 1.
+
+Action items:
+
+- Item, owner, due date
