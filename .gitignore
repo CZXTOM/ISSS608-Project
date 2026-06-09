@@ -6,3 +6,6 @@
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Data files (keep large data off GitHub)
+data/
