@@ -63,7 +63,7 @@ something.
 
 # The Data
 
-The dataset is `MC1_final.json` from VAST Challenge 2026 Mini-Challenge 1. It
+The dataset is `MC1_final_00.json` from VAST Challenge 2026 Mini-Challenge 1. It
 contains 23 rounds. The first 13 are spaced one business day apart and cover the
 run up from 17 May to 4 June. The last 10 are hourly and cover the crisis itself
 on 5 June.

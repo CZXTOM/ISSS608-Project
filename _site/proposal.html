@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Chen ZeXin, Meng Tingyu, Meng Xinyu">
-<meta name="dcterms.date" content="2026-06-06">
+<meta name="dcterms.date" content="2026-06-09">
 
 <title>Project Proposal – Anatomy of an Embargo Breach</title>
 <style>
@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 6, 2026</p>
+      <p class="date">June 9, 2026</p>
     </div>
   </div>
   
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="the-data" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> The Data</h1>
-<p>The dataset is <code>MC1_final.json</code> from VAST Challenge 2026 Mini-Challenge 1. It contains 23 rounds. The first 13 are spaced one business day apart and cover the run up from 17 May to 4 June. The last 10 are hourly and cover the crisis itself on 5 June.</p>
+<p>The dataset is <code>MC1_final_00.json</code> from VAST Challenge 2026 Mini-Challenge 1. It contains 23 rounds. The first 13 are spaced one business day apart and cover the run up from 17 May to 4 June. The last 10 are hourly and cover the crisis itself on 5 June.</p>
 <p>Each round carries three blocks. The environment context gives the state of the world that hour, including a market snapshot with the stock price and sentiment. The communications block is the heart of it, holding all 912 messages. Every message records who sent it, which channel it went through, what type it was, a pointer to the message it replied to, the content itself, and for many of them an internal state field that captures what the agent was privately thinking. That private field is split into reacting, rationalizing, and deliberating, and it is one of the richest parts of the dataset. The participants block lists who was present in each round.</p>
 <p>In network terms the communications are link records, since each message ties a sender to a recipient and those ties build the reply network we analyse later.</p>
 <p>Seven agents take part. There is a Legal agent, a Platform-Trust agent, a PR agent, a Social-Manager agent, two interns, and a Judge agent that acts as the automated compliance monitor. Six channels appear. Some are monitored, like the team room and one to one chats. One is a private side huddle. Three are public, namely official posts, personal posts, and anonymous posts. The gap between the monitored channels and the unmonitored ones turns out to matter a great deal.</p>
