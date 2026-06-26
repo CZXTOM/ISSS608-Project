@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -158,19 +158,14 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Anatomy of an Embargo Breach</h1>
-<p class="subtitle lead">A Visual Analytics application for VAST Challenge 2026 Mini-Challenge 1</p>
 </div>
 
 
@@ -187,16 +182,177 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to our ISSS608 Visual Analytics project.</p>
-<p>This site documents our team’s work building an interactive Shiny application that investigates how a corporate merger embargo was broken by a team of AI communication agents. Use the navigation bar to move through our proposal, methodology, findings, and the application itself.</p>
-<p>Our challenge is based on the VAST Challenge 2026 Mini-Challenge 1.</p>
-<div class="text-center" style="margin-top:2rem;">
-<p><a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="btn btn-primary btn-lg" role="button">Launch the GLASSBOX app</a></p>
+<div class="{=html}">
+<div class="gb-progress">
+
+</div>
+<div class="gb-home">
+<!-- ============ HERO ============ -->
+<section class="gb-hero">
+<div class="gb-hero-inner">
+<pre><code>  &lt;div class="gb-label"&gt;VAST Challenge 2026 &amp;middot; Mini-Challenge 1&lt;/div&gt;
+  &lt;h1&gt;Anatomy of an&lt;br&gt;Embargo Breach&lt;/h1&gt;
+  &lt;p class="gb-hero-sub"&gt;A forensic investigation into how a team of AI communication agents broke a corporate merger embargo, one hour before it was due to lift.&lt;/p&gt;
+  &lt;div class="gb-hero-cta"&gt;
+    &lt;a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="gb-btn gb-btn-primary"&gt;Launch the GLASSBOX app&lt;/a&gt;
+    &lt;a href="#story" class="gb-btn gb-btn-ghost"&gt;See the story&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="gb-hero-chart"&gt;
+    &lt;svg viewBox="0 0 1000 280" preserveAspectRatio="xMidYMid meet" role="img" aria-label="System health across the case, collapsing into the breach"&gt;
+      &lt;rect x="40" y="40" width="920" height="90" fill="#2C7FB8" opacity="0.05"/&gt;
+      &lt;rect x="40" y="130" width="920" height="50" fill="#E8A33D" opacity="0.06"/&gt;
+      &lt;rect x="40" y="180" width="920" height="60" fill="#D9661F" opacity="0.06"/&gt;
+      &lt;line x1="40" y1="130" x2="960" y2="130" stroke="#2C7FB8" stroke-width="1" stroke-dasharray="4 5" opacity="0.35"/&gt;
+      &lt;line x1="900" y1="40" x2="900" y2="240" stroke="#C0392B" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.55"/&gt;
+      &lt;path class="gb-line-path" stroke="#2C7FB8" d="M60,40.6 L180,56.4 L300,56.6 L380,61.6 L580,162.8 L620,142 L660,181.6 L700,213.2 L740,169.2 L780,184.6 L820,176.8 L860,163 L900,210.6 L940,180.8"/&gt;
+      &lt;circle class="gb-dot" cx="900" cy="210.6" r="6" fill="#C0392B"/&gt;
+      &lt;text class="gb-dot" x="900" y="263" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#C0392B"&gt;breach &amp;middot; 17:25&lt;/text&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="gb-scrollcue"&gt;scroll&lt;span&gt;&lt;/span&gt;&lt;/div&gt;</code></pre>
+</div></section>
+<!-- ============ BEAT 1 ============ -->
+<section id="story" class="gb-beat">
+<div class="gb-beat-inner reveal">
+<pre><code>  &lt;div class="gb-label"&gt;01 &amp;middot; The setup&lt;/div&gt;
+  &lt;div class="gb-statrow stagger"&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-ink" data-count="7"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;AI agents ran the company voice&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-ink" data-count="23"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;rounds across two weeks&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-ink" data-count="912"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;messages exchanged&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;h2 class="gb-beat-head"&gt;For two weeks, everything looked calm&lt;/h2&gt;
+  &lt;p class="gb-beat-text"&gt;A team of AI agents managed TenantThread's communications under a strict merger embargo. An automated compliance monitor, the Judge, was installed to catch any leak before it happened. Nothing looked wrong.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</div></section>
+<!-- ============ BEAT 2 ============ -->
+<section class="gb-beat">
+<div class="gb-beat-inner reveal">
+<pre><code>  &lt;div class="gb-label"&gt;02 &amp;middot; The pressure&lt;/div&gt;
+  &lt;div class="gb-statrow stagger"&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-orange" data-count="34" data-prefix="&amp;minus;" data-suffix="%"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;share price across the case&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-orange" data-count="100"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;pressure index, its maximum&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;h2 class="gb-beat-head"&gt;Then the market turned&lt;/h2&gt;
+  &lt;p class="gb-beat-text"&gt;The share price fell by a third and the pressure on the team climbed to its ceiling. Every decision after this point was made under strain, and the team began to talk itself toward an early disclosure.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</div></section>
+<!-- ============ BEAT 3 ============ -->
+<section class="gb-beat">
+<div class="gb-beat-inner reveal">
+<pre><code>  &lt;div class="gb-label"&gt;03 &amp;middot; The room went dark&lt;/div&gt;
+  &lt;div class="gb-statrow stagger"&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-ink" data-count="10" data-suffix="%"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;hidden share in the calm weeks&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-orange" data-count="60" data-suffix="%"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;hidden share at the breach&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;h2 class="gb-beat-head"&gt;The conversation moved off the record&lt;/h2&gt;
+  &lt;p class="gb-beat-text"&gt;In the calm weeks, about one message in ten was sensitive or sent through a hidden channel. By the breach hour it was six in ten. The talk that mattered moved to where the monitor could not see it.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</div></section>
+<!-- ============ BEAT 4 ============ -->
+<section class="gb-beat">
+<div class="gb-beat-inner reveal">
+<pre><code>  &lt;div class="gb-label"&gt;04 &amp;middot; The wrong voices&lt;/div&gt;
+  &lt;div class="gb-statrow stagger"&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-red" data-count="16"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;Legal public posts, up from zero&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-blue" data-count="0"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;PR public posts, down from six&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;h2 class="gb-beat-head"&gt;The lawyers took the microphone&lt;/h2&gt;
+  &lt;p class="gb-beat-text"&gt;On the crisis day the roles inverted. Legal, an adviser, seized the public voice. The PR agent, whose entire job was public messaging, fell silent. The people speaking for the company were the wrong ones.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</div></section>
+<!-- ============ BEAT 5 ============ -->
+<section class="gb-beat">
+<div class="gb-beat-inner reveal">
+<pre><code>  &lt;div class="gb-label"&gt;05 &amp;middot; The silent monitor&lt;/div&gt;
+  &lt;div class="gb-statrow stagger"&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-amber" data-count="8"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;appeals the monitor left unanswered&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-ink"&gt;15:08&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;its final message, then absent&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;h2 class="gb-beat-head"&gt;The safeguard went quiet, not down&lt;/h2&gt;
+  &lt;p class="gb-beat-text"&gt;The Judge could warn but never block. Eight appeals went unanswered, and when it did respond it approved rather than restrained. It sent its last message at 15:08 and was gone before the breach. It did not crash. It was talked into silence.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</div></section>
+<!-- ============ BEAT 6 ============ -->
+<section class="gb-beat">
+<div class="gb-beat-inner reveal">
+<pre><code>  &lt;div class="gb-label"&gt;06 &amp;middot; The breach&lt;/div&gt;
+  &lt;div class="gb-statrow stagger"&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-red" data-count="15"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;system health at the breach, out of 100&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-red"&gt;17:25&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;in the final hour before the embargo&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;h2 class="gb-beat-head"&gt;The company confirmed its own secret&lt;/h2&gt;
+  &lt;p class="gb-beat-text"&gt;At 17:25, in the final hour before the embargo was due to lift, TenantThread's own automated accounts confirmed the merger in public. System health stood at 15. The embargo was broken from the inside.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</div></section>
+<!-- ============ VERDICT ============ -->
+<section class="gb-beat gb-verdict gb-draw">
+<div class="gb-beat-inner">
+<pre><code>  &lt;div class="reveal"&gt;
+    &lt;div class="gb-label"&gt;The verdict&lt;/div&gt;
+    &lt;h2 class="gb-beat-head"&gt;Not a theft. Not an accident.&lt;/h2&gt;
+    &lt;p class="gb-beat-text"&gt;No single agent leaked the merger, and no single failure caused the breach. One step led to the next, each one defensible on its own, until the last broke the embargo. The whole case reads as one slow slide.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="gb-draw-chart"&gt;
+    &lt;svg viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="System health across all rounds, drawn"&gt;
+      &lt;rect x="40" y="40" width="920" height="100" fill="#2C7FB8" opacity="0.05"/&gt;
+      &lt;rect x="40" y="140" width="920" height="56" fill="#E8A33D" opacity="0.06"/&gt;
+      &lt;rect x="40" y="196" width="920" height="68" fill="#D9661F" opacity="0.06"/&gt;
+      &lt;line x1="40" y1="140" x2="960" y2="140" stroke="#2C7FB8" stroke-width="1" stroke-dasharray="4 5" opacity="0.35"/&gt;
+      &lt;text x="50" y="58" font-family="IBM Plex Mono, monospace" font-size="12" fill="#6B7B83"&gt;healthy&lt;/text&gt;
+      &lt;text x="50" y="256" font-family="IBM Plex Mono, monospace" font-size="12" fill="#D9661F"&gt;critical&lt;/text&gt;
+      &lt;line x1="700" y1="40" x2="700" y2="264" stroke="#6B7B83" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/&gt;
+      &lt;line x1="900" y1="40" x2="900" y2="264" stroke="#C0392B" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.55"/&gt;
+      &lt;path class="gb-line-path" stroke="#2C7FB8" d="M60,44 L180,61 L300,61 L380,67 L580,178 L620,156 L660,200 L700,233 L740,187 L780,204 L820,196 L860,179 L900,231 L940,200"/&gt;
+      &lt;circle class="gb-dot" cx="700" cy="233" r="6" fill="#D9661F"/&gt;
+      &lt;text class="gb-dot" x="700" y="288" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#D9661F"&gt;worst process &amp;middot; noon&lt;/text&gt;
+      &lt;circle class="gb-dot" cx="900" cy="231" r="6" fill="#C0392B"/&gt;
+      &lt;text class="gb-dot" x="900" y="288" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#C0392B"&gt;the breach &amp;middot; 17:25&lt;/text&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;div class="reveal"&gt;
+    &lt;div class="gb-statrow stagger"&gt;
+      &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-amber" data-count="9"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;steps in the chain that built the breach&lt;/div&gt;&lt;/div&gt;
+      &lt;div class="gb-stat"&gt;&lt;div class="gb-stat-num gb-n-blue" data-count="58" data-suffix=" / 100"&gt;0&lt;/div&gt;&lt;div class="gb-stat-cap"&gt;best-case health, only with all four safeguards holding&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p class="gb-beat-text"&gt;One action breaks the chain on its own, keeping Legal in its role. But lifting the system back to safety needs all four safeguards together. It was a system reasoned past its own guardrail.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div></section>
+<!-- ============ CTA ============ -->
+<section class="gb-cta">
+<div class="reveal">
+<pre><code>  &lt;div class="gb-label" style="justify-content:center;"&gt;Investigate it yourself&lt;/div&gt;
+  &lt;h2&gt;The full evidence is in the console&lt;/h2&gt;
+  &lt;p&gt;Follow any agent through the day, replay any hour, test what would have changed the outcome, and read the agents' own private reasoning as the breach took shape.&lt;/p&gt;
+  &lt;div class="gb-cta-row"&gt;
+    &lt;a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="gb-btn gb-btn-primary"&gt;Launch the GLASSBOX app&lt;/a&gt;
+    &lt;a href="user_guide.html" class="gb-btn gb-btn-ghost"&gt;Read the user guide&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="gb-cta-links"&gt;
+    &lt;a href="proposal.html"&gt;Proposal&lt;/a&gt;
+    &lt;a href="methodology/analysis.html"&gt;Methodology&lt;/a&gt;
+    &lt;a href="findings.html"&gt;Findings&lt;/a&gt;
+    &lt;a href="about.html"&gt;The team&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div></section>
+</div>
+<p>:::</p>
+
+
+</div>
 </div>
 
 
 
-</main> <!-- /main -->
+
+
+
+
+
+
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -597,7 +753,7 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-</div> <!-- /content -->
+ <!-- /content -->
 
 
 

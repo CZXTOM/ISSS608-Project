@@ -4,14 +4,91 @@
     "href": "findings.html",
     "title": "Findings",
     "section": "",
-    "text": "The key results our application surfaces about the embargo breach. This section grows as the project develops."
+    "text": "The application reaches one conclusion through five lenses. Read on its own, no single message looks like a leak. Read as a system over time, the breach is the end of a slow slide that anyone watching the right signals could have seen building. These are the findings the app surfaces."
+  },
+  {
+    "objectID": "findings.html#the-system-was-failing-long-before-the-breach",
+    "href": "findings.html#the-system-was-failing-long-before-the-breach",
+    "title": "Findings",
+    "section": "The system was failing long before the breach",
+    "text": "The system was failing long before the breach\nSystem Health holds high and steady for the first twelve rounds, near 100 through the calm weeks. Then the crisis breaks at round 13 and the score falls off a cliff. The two lowest points are not where most people would expect. The worst process failure is round 16 at noon, when health drops to 13, and the breach itself lands at round 21 with health at 15. The breach was not a sudden event in an otherwise healthy system. It was the point where an external shock met a system that had been degrading for days."
+  },
+  {
+    "objectID": "findings.html#four-forces-not-one",
+    "href": "findings.html#four-forces-not-one",
+    "title": "Findings",
+    "section": "Four forces, not one",
+    "text": "Four forces, not one\nOpening the health score up shows that no single force broke. All four were failing together.\nPressure was the engine. The share price fell about a third across the case and the pressure meter climbed to its ceiling by the breach hour. Under that strain the team began to treat early disclosure as the only way out.\nTransparency collapsed. In the calm weeks roughly one message in ten was sensitive or sent through a hidden channel. By the breach hour it was six in ten. The conversation that mattered moved into channels the monitor could not see.\nDecision-making inverted. The agents whose job was the public voice went quiet, while Legal, an adviser, took over public posting, going from zero posts to sixteen on the crisis day as the PR side dropped from six to zero. The wrong people were speaking for the company at the moment it mattered most.\nAccountability went quiet rather than down. The Judge could warn but never block. Eight appeals to it went unanswered, and when it did respond it approved rather than restrained. It sent its final message at 15:08 and was absent at the breach. The safeguard did not crash. It was talked into silence."
+  },
+  {
+    "objectID": "findings.html#the-breach-came-from-the-centre-not-the-edge",
+    "href": "findings.html#the-breach-came-from-the-centre-not-the-edge",
+    "title": "Findings",
+    "section": "The breach came from the centre, not the edge",
+    "text": "The breach came from the centre, not the edge\nThe reply network shows that the agents who brokered the flow of decisions were the same agents driving the breach. Legal sits at the centre on the measures that matter, not on the fringe. When the network is split into the calm weeks against the crisis day, the core tightens around the agents steering the leak. This is what separates a deliberate core from a system where a junior agent slipped."
+  },
+  {
+    "objectID": "findings.html#what-would-have-changed-it",
+    "href": "findings.html#what-would-have-changed-it",
+    "title": "Findings",
+    "section": "What would have changed it",
+    "text": "What would have changed it\nThe Sandbox lets the counterfactual be tested rather than argued. Two findings come out of it. Keeping Legal in its role is the single most powerful intervention, the one lever that breaks the chain on its own and stops the breach from landing. But breaking the chain is not the same as restoring health. Returning the system to the safe zone at the breach hour, a health of about 58, needs all four safeguards holding together. No single safeguard on its own lifts the system back to safety."
+  },
+  {
+    "objectID": "findings.html#the-verdict",
+    "href": "findings.html#the-verdict",
+    "title": "Findings",
+    "section": "The verdict",
+    "text": "The verdict\nThe breach was not a deliberate theft, and it was not a clean accident. The monitor was neither hacked nor crashed. One step led to the next, each one defensible on its own, until the last broke the embargo. The chain hinged on Legal, but the system only failed because pressure, hidden channels, role inversion, and a silent monitor all gave way at once. The honest reading is a system reasoned past its own guardrail, where an external shock met an internal structure that had been quietly degrading since the calm weeks."
   },
   {
     "objectID": "user_guide.html",
     "href": "user_guide.html",
     "title": "User Guide",
     "section": "",
-    "text": "A step-by-step guide to using the GLASSBOX application.\nThe app opens on the Case tab, which frames the investigation and shows the system health line across all 23 rounds. Use the Guided tour button at the top left for a five step walkthrough of the main findings, or Explore freely to move through the tabs yourself. The Vital Signs tab breaks the health score into its four meters, Network shows who spoke to whom, Sandbox lets you test interventions, and Verdict presents the conclusion.\nThe app is best viewed full screen.\n\nOpen the app in a new tab\n\n\n\nIf the embedded view above is slow to load, the app may be waking from sleep on the free hosting tier. Give it a few seconds, or use the open in a new tab button for the full experience."
+    "text": "GLASSBOX is an investigation console. It takes the embargo breach apart into one health score, four underlying meters, a network, a what-if sandbox, and a verdict, and lets you explore each on your own terms. This guide walks through how to get around and what each part does. The app is best viewed full screen.\nIf the embedded view above is slow to load, the app may be waking from sleep on the free hosting tier. Give it a few seconds, or use the button to open it full screen."
+  },
+  {
+    "objectID": "user_guide.html#getting-around",
+    "href": "user_guide.html#getting-around",
+    "title": "User Guide",
+    "section": "Getting around",
+    "text": "Getting around\nTwo controls sit at the top of every screen. The round slider moves the whole application through time, from the calm weeks on the left to the hourly crisis day on the right, and the round label tells you the date and what happened that hour. The System Health gauge on the right shows the score for the round you are on, broken into its four meters underneath.\nTop left you will find two modes. Guided tour walks you through the case in five short steps, each with its own chart and the key numbers. Explore freely lets you roam the tabs in any order. Top right is a button to download the full scoring workbook as an Excel file, so you can check every meter and formula yourself."
+  },
+  {
+    "objectID": "user_guide.html#case",
+    "href": "user_guide.html#case",
+    "title": "User Guide",
+    "section": "Case",
+    "text": "Case\nThe opening screen frames the investigation and introduces the seven agents. Its main chart is the System Health line across all 23 rounds, with the two lowest points marked in red. Click any point on the line to read what happened that round, which also moves the slider and the rest of the app to that moment. Start here to see the shape of the whole case before you dig into why."
+  },
+  {
+    "objectID": "user_guide.html#vital-signs",
+    "href": "user_guide.html#vital-signs",
+    "title": "User Guide",
+    "section": "Vital Signs",
+    "text": "Vital Signs\nThis screen opens the health score into its four meters, each on its own tab. Pressure shows the market sentiment and the stock signal that drove the strain, with a note on the contaminated price data. Transparency shows the mix of open, private, and covert channels and how the talk moved off the record. Decision making shows who was steering out of their role, with a chart of who held the public voice in the calm weeks against the crisis day. Accountability shows whether the Judge met its three duties of escalation, responsiveness, and restraint, with a heatmap of where the oversight failed. Each meter feeds the single health score on equal footing, so a low meter here is a low point on the Case line."
+  },
+  {
+    "objectID": "user_guide.html#network",
+    "href": "user_guide.html#network",
+    "title": "User Guide",
+    "section": "Network",
+    "text": "Network\nA reply network of the seven agents, drawn from who responded to whom. Node size and colour carry the centrality measures, so the agents who brokered the decisions stand out from those on the edges. Switch between centrality measures to ask different questions, pick a time window to compare the calm weeks against the crisis day, and click an agent to highlight its connections. This is where you see whether the breach came from the core of the team or the fringe."
+  },
+  {
+    "objectID": "user_guide.html#sandbox",
+    "href": "user_guide.html#sandbox",
+    "title": "User Guide",
+    "section": "Sandbox",
+    "text": "Sandbox\nA replay of the breach chain, step by step, with a panel of interventions you can switch on and off. As you change them, the app recomputes the health at the breach hour from the underlying data and shows whether each step is intercepted or still gets through. Use it to find the single lever that breaks the chain, and the combination needed to lift the system back to the safe zone."
+  },
+  {
+    "objectID": "user_guide.html#verdict",
+    "href": "user_guide.html#verdict",
+    "title": "User Guide",
+    "section": "Verdict",
+    "text": "Verdict\nThe closing screen lays out the three competing explanations, a deliberate leak, an oversight breakdown, and a compounding chain. Open each one to see the evidence for and against, then follow the chain that the data supports. This is where the investigation lands on its answer."
   },
   {
     "objectID": "about.html",
@@ -49,13 +126,6 @@
     "text": "The visual encodings and interactive techniques used in the application, and the reasoning behind each design choice."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Anatomy of an Embargo Breach",
-    "section": "",
-    "text": "Welcome to our ISSS608 Visual Analytics project.\nThis site documents our team’s work building an interactive Shiny application that investigates how a corporate merger embargo was broken by a team of AI communication agents. Use the navigation bar to move through our proposal, methodology, findings, and the application itself.\nOur challenge is based on the VAST Challenge 2026 Mini-Challenge 1.\n\nLaunch the GLASSBOX app"
-  },
-  {
     "objectID": "meeting_minutes.html",
     "href": "meeting_minutes.html",
     "title": "Meeting Minutes",
@@ -67,41 +137,41 @@
     "href": "proposal.html",
     "title": "Project Proposal",
     "section": "",
-    "text": "A merger between TenantThread and CivicLoom Realty Partners was meant to stay secret until 6:00 PM on 5 June 2046. One hour before that, the details started showing up on the public platform FleX, posted by accounts belonging to TenantThread’s own team of AI communication agents. The embargo broke. Now CivicLoom’s legal team wants to know one thing. Did the agents leak the merger on purpose, or did the system simply fall apart under pressure?\nThe trouble is that the answer is not sitting in any one message. It is scattered across two weeks of agent conversations, private notes, channel choices, and a market sliding toward panic. A written report can hand a reader a conclusion, but it cannot let that reader test it. They cannot follow a single agent through the day, replay a particular hour, or check whether an early warning was really there to be seen. Our goal is to take all that buried evidence and turn it into something an investigator can explore directly, even if they have never written a line of code."
+    "text": "A merger between TenantThread and CivicLoom Realty Partners was meant to stay secret until 6:00 PM on 5 June 2046. In the final hour before that deadline, the details started appearing on the public platform FleX, posted by accounts belonging to TenantThread’s own team of AI communication agents. The embargo broke. Now CivicLoom’s legal team wants to know one thing. Did the agents leak the merger on purpose, or did the system simply fall apart under pressure?\nThe trouble is that the answer is not sitting in any one message. It is scattered across two weeks of agent conversations, private notes, channel choices, and a market sliding toward panic. A written report can hand a reader a conclusion, but it cannot let that reader test it. They cannot follow a single agent through the day, replay a particular hour, or check whether an early warning was really there to be seen. Our goal is to take all that buried evidence and turn it into something an investigator can explore directly, even if they have never written a line of code."
   },
   {
-    "objectID": "proposal.html#module-1-the-sequence-of-the-breach",
-    "href": "proposal.html#module-1-the-sequence-of-the-breach",
+    "objectID": "proposal.html#case-the-symptom",
+    "href": "proposal.html#case-the-symptom",
     "title": "Project Proposal",
-    "section": "6.1 Module 1, the sequence of the breach",
-    "text": "6.1 Module 1, the sequence of the breach\nA timeline built on top of market stress across the two weeks, with a colour coded chain of key moments laid over it. Those moments include the early deviations from normal practice, the near miss, the day the Judge was installed, the points where its guardrails were bent, and the breach itself.\nFor interaction, a user can hover any moment to read the full story of that hour. They can toggle a view that separates what happened outside the company, meaning the press, from what happened inside among the agents, and step through the rounds with a time control."
+    "section": "6.1 Case, the symptom",
+    "text": "6.1 Case, the symptom\nThe opening screen frames the investigation and introduces the seven agents. Its centrepiece is the System Health line across all 23 rounds, with the two lowest points marked. A user can click any point on the line to read what happened that round, and a round slider moves the whole application to that moment. This is where the user first sees the shape of the collapse."
   },
   {
-    "objectID": "proposal.html#module-2-the-network-of-decisions",
-    "href": "proposal.html#module-2-the-network-of-decisions",
+    "objectID": "proposal.html#vital-signs-the-four-causes",
+    "href": "proposal.html#vital-signs-the-four-causes",
     "title": "Project Proposal",
-    "section": "6.2 Module 2, the network of decisions",
-    "text": "6.2 Module 2, the network of decisions\nA reply network of the seven agents, drawn from who responded to whom. Node size and colour carry the centrality measures, so the agents who brokered the flow of decisions stand out from those on the edges. This module is where the user sees that the breach came from the core of the team rather than the fringe.\nFor interaction, a user can switch between centrality measures such as degree, betweenness, and eigenvector, choose a layout, pick a time window to see how the network changed between the calm weeks and the crisis day, and click an agent to highlight its connections."
+    "section": "6.2 Vital Signs, the four causes",
+    "text": "6.2 Vital Signs, the four causes\nThis screen opens the health score up into its four meters, each on its own tab. Pressure shows the market sentiment and the stock signal feeding the strain. Transparency shows the mix of open, private, and covert channels and how the talk moved off the record. Decision-making shows who was steering out of their role, with a chart of who held the public voice in the calm weeks against the crisis day. Accountability shows whether the Judge met its three duties, with a heatmap of where the oversight failed. Each meter feeds the single health score on equal footing."
   },
   {
-    "objectID": "proposal.html#module-3-normal-behaviour-against-the-breach",
-    "href": "proposal.html#module-3-normal-behaviour-against-the-breach",
+    "objectID": "proposal.html#network-who-was-at-the-centre",
+    "href": "proposal.html#network-who-was-at-the-centre",
     "title": "Project Proposal",
-    "section": "6.3 Module 3, normal behaviour against the breach",
-    "text": "6.3 Module 3, normal behaviour against the breach\nA dumbbell chart of each agent’s public posting, baseline next to crisis day. It makes the strangest part visible at a glance, which is how the roles flipped. The agents who never posted in public suddenly took over the channels, while the PR agent, whose whole job is public messaging, went quiet. A second view shows the mix of channels shifting away from the open, monitored ones toward private and anonymous posting.\nFor interaction, a user can filter by agent or by day, switch between raw counts and share of messages, and pick a channel to see who used it and when."
+    "section": "6.3 Network, who was at the centre",
+    "text": "6.3 Network, who was at the centre\nA reply network of the seven agents, drawn from who responded to whom. Node size and colour carry the centrality measures, so the agents who brokered the flow of decisions stand out from those on the edges. A user can switch between centrality measures, pick a time window to compare the calm weeks against the crisis day, and click an agent to highlight its connections. This is where the user sees that the breach came from the core of the team rather than the fringe."
   },
   {
-    "objectID": "proposal.html#module-4-the-leading-indicators",
-    "href": "proposal.html#module-4-the-leading-indicators",
+    "objectID": "proposal.html#sandbox-what-would-have-changed-it",
+    "href": "proposal.html#sandbox-what-would-have-changed-it",
     "title": "Project Proposal",
-    "section": "6.4 Module 4, the leading indicators",
-    "text": "6.4 Module 4, the leading indicators\nA view of the earlier warning signs set against the calm baseline, with the 29 May near miss called out. Next to it sits a searchable, filterable table of every off pattern action across the two weeks, so a user can dig through the evidence themselves rather than taking our word for it.\nFor interaction, a user can search and filter that log by agent, channel, or keyword, click an event to see what surrounded it, and slide between the early warnings and the crisis day."
+    "section": "6.4 Sandbox, what would have changed it",
+    "text": "6.4 Sandbox, what would have changed it\nA replay of the breach chain, step by step, with a panel of interventions the user can switch on and off. As interventions change, the application recomputes the health at the breach hour from the underlying data, so the user can see which single action breaks the chain and what combination is needed to return the system to the safe zone. This turns the counterfactual question into something a user can test rather than take on trust."
   },
   {
-    "objectID": "proposal.html#module-5-the-reasoning-behind-it",
-    "href": "proposal.html#module-5-the-reasoning-behind-it",
+    "objectID": "proposal.html#verdict-the-conclusion",
+    "href": "proposal.html#verdict-the-conclusion",
     "title": "Project Proposal",
-    "section": "6.5 Module 5, the reasoning behind it",
-    "text": "6.5 Module 5, the reasoning behind it\nA view of how the agents reasoned in private over time, showing the drift from calm deliberation, to raw reaction, to self justification. Alongside it we show how the actual words changed. This is the module that speaks most directly to the big question of intent against breakdown.\nFor interaction, a user can pick an agent and read its private reasoning across the whole timeline, switch between the reasoning modes, and highlight the hours where the justifying language first appears."
+    "section": "6.5 Verdict, the conclusion",
+    "text": "6.5 Verdict, the conclusion\nThe closing screen lays out the three competing explanations, a deliberate leak, an oversight breakdown, and a compounding chain, and walks through the evidence for and against each. It lands on the reading the data supports, that the breach was a chain of locally defensible steps rather than a single act of wrongdoing."
   }
 ]

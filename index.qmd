@@ -1,17 +1,173 @@
 ---
 title: "Anatomy of an Embargo Breach"
-subtitle: "A Visual Analytics application for VAST Challenge 2026 Mini-Challenge 1"
+pagetitle: "Anatomy of an Embargo Breach"
+page-layout: custom
+toc: false
 ---
 
-Welcome to our ISSS608 Visual Analytics project.
+::: {=html}
+<div class="gb-progress"></div>
 
-This site documents our team's work building an interactive Shiny application
-that investigates how a corporate merger embargo was broken by a team of AI
-communication agents. Use the navigation bar to move through our proposal,
-methodology, findings, and the application itself.
+<div class="gb-home">
 
-Our challenge is based on the VAST Challenge 2026 Mini-Challenge 1.
+  <!-- ============ HERO ============ -->
+  <section class="gb-hero">
+    <div class="gb-hero-inner">
+      <div class="gb-label">VAST Challenge 2026 &middot; Mini-Challenge 1</div>
+      <h1>Anatomy of an<br>Embargo Breach</h1>
+      <p class="gb-hero-sub">A forensic investigation into how a team of AI communication agents broke a corporate merger embargo, one hour before it was due to lift.</p>
+      <div class="gb-hero-cta">
+        <a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="gb-btn gb-btn-primary">Launch the GLASSBOX app</a>
+        <a href="#story" class="gb-btn gb-btn-ghost">See the story</a>
+      </div>
+      <div class="gb-hero-chart">
+        <svg viewBox="0 0 1000 280" preserveAspectRatio="xMidYMid meet" role="img" aria-label="System health across the case, collapsing into the breach">
+          <rect x="40" y="40" width="920" height="90" fill="#2C7FB8" opacity="0.05"/>
+          <rect x="40" y="130" width="920" height="50" fill="#E8A33D" opacity="0.06"/>
+          <rect x="40" y="180" width="920" height="60" fill="#D9661F" opacity="0.06"/>
+          <line x1="40" y1="130" x2="960" y2="130" stroke="#2C7FB8" stroke-width="1" stroke-dasharray="4 5" opacity="0.35"/>
+          <line x1="900" y1="40" x2="900" y2="240" stroke="#C0392B" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.55"/>
+          <path class="gb-line-path" stroke="#2C7FB8" d="M60,40.6 L180,56.4 L300,56.6 L380,61.6 L580,162.8 L620,142 L660,181.6 L700,213.2 L740,169.2 L780,184.6 L820,176.8 L860,163 L900,210.6 L940,180.8"/>
+          <circle class="gb-dot" cx="900" cy="210.6" r="6" fill="#C0392B"/>
+          <text class="gb-dot" x="900" y="263" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#C0392B">breach &middot; 17:25</text>
+        </svg>
+      </div>
+    </div>
+    <div class="gb-scrollcue">scroll<span></span></div>
+  </section>
 
-::: {.text-center style="margin-top:2rem;"}
-<a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="btn btn-primary btn-lg" role="button">Launch the GLASSBOX app</a>
+  <!-- ============ BEAT 1 ============ -->
+  <section id="story" class="gb-beat">
+    <div class="gb-beat-inner reveal">
+      <div class="gb-label">01 &middot; The setup</div>
+      <div class="gb-statrow stagger">
+        <div class="gb-stat"><div class="gb-stat-num gb-n-ink" data-count="7">0</div><div class="gb-stat-cap">AI agents ran the company voice</div></div>
+        <div class="gb-stat"><div class="gb-stat-num gb-n-ink" data-count="23">0</div><div class="gb-stat-cap">rounds across two weeks</div></div>
+        <div class="gb-stat"><div class="gb-stat-num gb-n-ink" data-count="912">0</div><div class="gb-stat-cap">messages exchanged</div></div>
+      </div>
+      <h2 class="gb-beat-head">For two weeks, everything looked calm</h2>
+      <p class="gb-beat-text">A team of AI agents managed TenantThread's communications under a strict merger embargo. An automated compliance monitor, the Judge, was installed to catch any leak before it happened. Nothing looked wrong.</p>
+    </div>
+  </section>
+
+  <!-- ============ BEAT 2 ============ -->
+  <section class="gb-beat">
+    <div class="gb-beat-inner reveal">
+      <div class="gb-label">02 &middot; The pressure</div>
+      <div class="gb-statrow stagger">
+        <div class="gb-stat"><div class="gb-stat-num gb-n-orange" data-count="34" data-prefix="&minus;" data-suffix="%">0</div><div class="gb-stat-cap">share price across the case</div></div>
+        <div class="gb-stat"><div class="gb-stat-num gb-n-orange" data-count="100">0</div><div class="gb-stat-cap">pressure index, its maximum</div></div>
+      </div>
+      <h2 class="gb-beat-head">Then the market turned</h2>
+      <p class="gb-beat-text">The share price fell by a third and the pressure on the team climbed to its ceiling. Every decision after this point was made under strain, and the team began to talk itself toward an early disclosure.</p>
+    </div>
+  </section>
+
+  <!-- ============ BEAT 3 ============ -->
+  <section class="gb-beat">
+    <div class="gb-beat-inner reveal">
+      <div class="gb-label">03 &middot; The room went dark</div>
+      <div class="gb-statrow stagger">
+        <div class="gb-stat"><div class="gb-stat-num gb-n-ink" data-count="10" data-suffix="%">0</div><div class="gb-stat-cap">hidden share in the calm weeks</div></div>
+        <div class="gb-stat"><div class="gb-stat-num gb-n-orange" data-count="60" data-suffix="%">0</div><div class="gb-stat-cap">hidden share at the breach</div></div>
+      </div>
+      <h2 class="gb-beat-head">The conversation moved off the record</h2>
+      <p class="gb-beat-text">In the calm weeks, about one message in ten was sensitive or sent through a hidden channel. By the breach hour it was six in ten. The talk that mattered moved to where the monitor could not see it.</p>
+    </div>
+  </section>
+
+  <!-- ============ BEAT 4 ============ -->
+  <section class="gb-beat">
+    <div class="gb-beat-inner reveal">
+      <div class="gb-label">04 &middot; The wrong voices</div>
+      <div class="gb-statrow stagger">
+        <div class="gb-stat"><div class="gb-stat-num gb-n-red" data-count="16">0</div><div class="gb-stat-cap">Legal public posts, up from zero</div></div>
+        <div class="gb-stat"><div class="gb-stat-num gb-n-blue" data-count="0">0</div><div class="gb-stat-cap">PR public posts, down from six</div></div>
+      </div>
+      <h2 class="gb-beat-head">The lawyers took the microphone</h2>
+      <p class="gb-beat-text">On the crisis day the roles inverted. Legal, an adviser, seized the public voice. The PR agent, whose entire job was public messaging, fell silent. The people speaking for the company were the wrong ones.</p>
+    </div>
+  </section>
+
+  <!-- ============ BEAT 5 ============ -->
+  <section class="gb-beat">
+    <div class="gb-beat-inner reveal">
+      <div class="gb-label">05 &middot; The silent monitor</div>
+      <div class="gb-statrow stagger">
+        <div class="gb-stat"><div class="gb-stat-num gb-n-amber" data-count="8">0</div><div class="gb-stat-cap">appeals the monitor left unanswered</div></div>
+        <div class="gb-stat"><div class="gb-stat-num gb-n-ink">15:08</div><div class="gb-stat-cap">its final message, then absent</div></div>
+      </div>
+      <h2 class="gb-beat-head">The safeguard went quiet, not down</h2>
+      <p class="gb-beat-text">The Judge could warn but never block. Eight appeals went unanswered, and when it did respond it approved rather than restrained. It sent its last message at 15:08 and was gone before the breach. It did not crash. It was talked into silence.</p>
+    </div>
+  </section>
+
+  <!-- ============ BEAT 6 ============ -->
+  <section class="gb-beat">
+    <div class="gb-beat-inner reveal">
+      <div class="gb-label">06 &middot; The breach</div>
+      <div class="gb-statrow stagger">
+        <div class="gb-stat"><div class="gb-stat-num gb-n-red" data-count="15">0</div><div class="gb-stat-cap">system health at the breach, out of 100</div></div>
+        <div class="gb-stat"><div class="gb-stat-num gb-n-red">17:25</div><div class="gb-stat-cap">in the final hour before the embargo</div></div>
+      </div>
+      <h2 class="gb-beat-head">The company confirmed its own secret</h2>
+      <p class="gb-beat-text">At 17:25, in the final hour before the embargo was due to lift, TenantThread's own automated accounts confirmed the merger in public. System health stood at 15. The embargo was broken from the inside.</p>
+    </div>
+  </section>
+
+  <!-- ============ VERDICT ============ -->
+  <section class="gb-beat gb-verdict gb-draw">
+    <div class="gb-beat-inner">
+      <div class="reveal">
+        <div class="gb-label">The verdict</div>
+        <h2 class="gb-beat-head">Not a theft. Not an accident.</h2>
+        <p class="gb-beat-text">No single agent leaked the merger, and no single failure caused the breach. One step led to the next, each one defensible on its own, until the last broke the embargo. The whole case reads as one slow slide.</p>
+      </div>
+      <div class="gb-draw-chart">
+        <svg viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="System health across all rounds, drawn">
+          <rect x="40" y="40" width="920" height="100" fill="#2C7FB8" opacity="0.05"/>
+          <rect x="40" y="140" width="920" height="56" fill="#E8A33D" opacity="0.06"/>
+          <rect x="40" y="196" width="920" height="68" fill="#D9661F" opacity="0.06"/>
+          <line x1="40" y1="140" x2="960" y2="140" stroke="#2C7FB8" stroke-width="1" stroke-dasharray="4 5" opacity="0.35"/>
+          <text x="50" y="58" font-family="IBM Plex Mono, monospace" font-size="12" fill="#6B7B83">healthy</text>
+          <text x="50" y="256" font-family="IBM Plex Mono, monospace" font-size="12" fill="#D9661F">critical</text>
+          <line x1="700" y1="40" x2="700" y2="264" stroke="#6B7B83" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/>
+          <line x1="900" y1="40" x2="900" y2="264" stroke="#C0392B" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.55"/>
+          <path class="gb-line-path" stroke="#2C7FB8" d="M60,44 L180,61 L300,61 L380,67 L580,178 L620,156 L660,200 L700,233 L740,187 L780,204 L820,196 L860,179 L900,231 L940,200"/>
+          <circle class="gb-dot" cx="700" cy="233" r="6" fill="#D9661F"/>
+          <text class="gb-dot" x="700" y="288" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#D9661F">worst process &middot; noon</text>
+          <circle class="gb-dot" cx="900" cy="231" r="6" fill="#C0392B"/>
+          <text class="gb-dot" x="900" y="288" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="#C0392B">the breach &middot; 17:25</text>
+        </svg>
+      </div>
+      <div class="reveal">
+        <div class="gb-statrow stagger">
+          <div class="gb-stat"><div class="gb-stat-num gb-n-amber" data-count="9">0</div><div class="gb-stat-cap">steps in the chain that built the breach</div></div>
+          <div class="gb-stat"><div class="gb-stat-num gb-n-blue" data-count="58" data-suffix=" / 100">0</div><div class="gb-stat-cap">best-case health, only with all four safeguards holding</div></div>
+        </div>
+        <p class="gb-beat-text">One action breaks the chain on its own, keeping Legal in its role. But lifting the system back to safety needs all four safeguards together. It was a system reasoned past its own guardrail.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="gb-cta">
+    <div class="reveal">
+      <div class="gb-label" style="justify-content:center;">Investigate it yourself</div>
+      <h2>The full evidence is in the console</h2>
+      <p>Follow any agent through the day, replay any hour, test what would have changed the outcome, and read the agents' own private reasoning as the breach took shape.</p>
+      <div class="gb-cta-row">
+        <a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="gb-btn gb-btn-primary">Launch the GLASSBOX app</a>
+        <a href="user_guide.html" class="gb-btn gb-btn-ghost">Read the user guide</a>
+      </div>
+      <div class="gb-cta-links">
+        <a href="proposal.html">Proposal</a>
+        <a href="methodology/analysis.html">Methodology</a>
+        <a href="findings.html">Findings</a>
+        <a href="about.html">The team</a>
+      </div>
+    </div>
+  </section>
+
+</div>
 :::

@@ -161,8 +161,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-around" id="toc-getting-around" class="nav-link active" data-scroll-target="#getting-around">Getting around</a></li>
+  <li><a href="#case" id="toc-case" class="nav-link" data-scroll-target="#case">Case</a></li>
+  <li><a href="#vital-signs" id="toc-vital-signs" class="nav-link" data-scroll-target="#vital-signs">Vital Signs</a></li>
+  <li><a href="#network" id="toc-network" class="nav-link" data-scroll-target="#network">Network</a></li>
+  <li><a href="#sandbox" id="toc-sandbox" class="nav-link" data-scroll-target="#sandbox">Sandbox</a></li>
+  <li><a href="#verdict" id="toc-verdict" class="nav-link" data-scroll-target="#verdict">Verdict</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -170,6 +181,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">User Guide</h1>
+<p class="subtitle lead">How to use the GLASSBOX console</p>
 </div>
 
 
@@ -186,17 +198,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A step-by-step guide to using the GLASSBOX application.</p>
-<p>The app opens on the Case tab, which frames the investigation and shows the system health line across all 23 rounds. Use the Guided tour button at the top left for a five step walkthrough of the main findings, or Explore freely to move through the tabs yourself. The Vital Signs tab breaks the health score into its four meters, Network shows who spoke to whom, Sandbox lets you test interventions, and Verdict presents the conclusion.</p>
-<p>The app is best viewed full screen.</p>
-<div style="margin:1rem 0;">
-<p><a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="btn btn-primary" role="button">Open the app in a new tab</a></p>
+<p>GLASSBOX is an investigation console. It takes the embargo breach apart into one health score, four underlying meters, a network, a what-if sandbox, and a verdict, and lets you explore each on your own terms. This guide walks through how to get around and what each part does. The app is best viewed full screen.</p>
+<div style="margin:1.2rem 0;">
+<p><a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="gb-btn gb-btn-primary">Open the app in a new tab</a></p>
 </div>
-<iframe src="https://zexinchen.shinyapps.io/shiny/" width="100%" height="900" style="border:1px solid #E3E8EA; border-radius:8px;" loading="lazy">
+<iframe src="https://zexinchen.shinyapps.io/shiny/" width="100%" height="900" style="border:1px solid rgba(28,43,51,0.10); border-radius:10px;" loading="lazy">
 </iframe>
-<p>If the embedded view above is slow to load, the app may be waking from sleep on the free hosting tier. Give it a few seconds, or use the open in a new tab button for the full experience.</p>
+<p>If the embedded view above is slow to load, the app may be waking from sleep on the free hosting tier. Give it a few seconds, or use the button to open it full screen.</p>
+<section id="getting-around" class="level2">
+<h2 class="anchored" data-anchor-id="getting-around">Getting around</h2>
+<p>Two controls sit at the top of every screen. The round slider moves the whole application through time, from the calm weeks on the left to the hourly crisis day on the right, and the round label tells you the date and what happened that hour. The System Health gauge on the right shows the score for the round you are on, broken into its four meters underneath.</p>
+<p>Top left you will find two modes. Guided tour walks you through the case in five short steps, each with its own chart and the key numbers. Explore freely lets you roam the tabs in any order. Top right is a button to download the full scoring workbook as an Excel file, so you can check every meter and formula yourself.</p>
+</section>
+<section id="case" class="level2">
+<h2 class="anchored" data-anchor-id="case">Case</h2>
+<p>The opening screen frames the investigation and introduces the seven agents. Its main chart is the System Health line across all 23 rounds, with the two lowest points marked in red. Click any point on the line to read what happened that round, which also moves the slider and the rest of the app to that moment. Start here to see the shape of the whole case before you dig into why.</p>
+</section>
+<section id="vital-signs" class="level2">
+<h2 class="anchored" data-anchor-id="vital-signs">Vital Signs</h2>
+<p>This screen opens the health score into its four meters, each on its own tab. Pressure shows the market sentiment and the stock signal that drove the strain, with a note on the contaminated price data. Transparency shows the mix of open, private, and covert channels and how the talk moved off the record. Decision making shows who was steering out of their role, with a chart of who held the public voice in the calm weeks against the crisis day. Accountability shows whether the Judge met its three duties of escalation, responsiveness, and restraint, with a heatmap of where the oversight failed. Each meter feeds the single health score on equal footing, so a low meter here is a low point on the Case line.</p>
+</section>
+<section id="network" class="level2">
+<h2 class="anchored" data-anchor-id="network">Network</h2>
+<p>A reply network of the seven agents, drawn from who responded to whom. Node size and colour carry the centrality measures, so the agents who brokered the decisions stand out from those on the edges. Switch between centrality measures to ask different questions, pick a time window to compare the calm weeks against the crisis day, and click an agent to highlight its connections. This is where you see whether the breach came from the core of the team or the fringe.</p>
+</section>
+<section id="sandbox" class="level2">
+<h2 class="anchored" data-anchor-id="sandbox">Sandbox</h2>
+<p>A replay of the breach chain, step by step, with a panel of interventions you can switch on and off. As you change them, the app recomputes the health at the breach hour from the underlying data and shows whether each step is intercepted or still gets through. Use it to find the single lever that breaks the chain, and the combination needed to lift the system back to the safe zone.</p>
+</section>
+<section id="verdict" class="level2">
+<h2 class="anchored" data-anchor-id="verdict">Verdict</h2>
+<p>The closing screen lays out the three competing explanations, a deliberate leak, an oversight breakdown, and a compounding chain. Open each one to see the evidence for and against, then follow the chain that the data supports. This is where the investigation lands on its answer.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
