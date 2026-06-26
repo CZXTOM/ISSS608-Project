@@ -11,3 +11,7 @@ communication agents. Use the navigation bar to move through our proposal,
 methodology, findings, and the application itself.
 
 Our challenge is based on the VAST Challenge 2026 Mini-Challenge 1.
+
+::: {.text-center style="margin-top:2rem;"}
+<a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="btn btn-primary btn-lg" role="button">Launch the GLASSBOX app</a>
+:::

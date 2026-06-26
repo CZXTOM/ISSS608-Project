@@ -3,5 +3,20 @@ title: "User Guide"
 toc: true
 ---
 
-A step-by-step guide to using the Shiny application. Added once the app takes
-shape.
+A step-by-step guide to using the GLASSBOX application.
+
+The app opens on the Case tab, which frames the investigation and shows the system health line across all 23 rounds. Use the Guided tour button at the top left for a five step walkthrough of the main findings, or Explore freely to move through the tabs yourself. The Vital Signs tab breaks the health score into its four meters, Network shows who spoke to whom, Sandbox lets you test interventions, and Verdict presents the conclusion.
+
+The app is best viewed full screen.
+
+::: {style="margin:1rem 0;"}
+<a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="btn btn-primary" role="button">Open the app in a new tab</a>
+:::
+
+<iframe src="https://zexinchen.shinyapps.io/shiny/"
+        width="100%" height="900"
+        style="border:1px solid #E3E8EA; border-radius:8px;"
+        loading="lazy">
+</iframe>
+
+If the embedded view above is slow to load, the app may be waking from sleep on the free hosting tier. Give it a few seconds, or use the open in a new tab button for the full experience.

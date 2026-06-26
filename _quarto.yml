@@ -26,6 +26,9 @@ website:
         text: Meeting Minutes
       - href: user_guide.qmd
         text: User Guide
+      - text: Shiny App
+        href: https://zexinchen.shinyapps.io/shiny/
+        target: _blank
       - href: about.qmd
         text: About
     right:

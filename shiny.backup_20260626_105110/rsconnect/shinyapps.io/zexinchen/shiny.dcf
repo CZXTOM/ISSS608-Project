@@ -1,0 +1,10 @@
+name: shiny
+title:
+username: zexinchen
+account: zexinchen
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 17505103
+bundleId: 12122992
+url: https://zexinchen.shinyapps.io/shiny/
+version: 1

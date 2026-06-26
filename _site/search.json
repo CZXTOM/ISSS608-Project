@@ -11,7 +11,7 @@
     "href": "user_guide.html",
     "title": "User Guide",
     "section": "",
-    "text": "A step-by-step guide to using the Shiny application. Added once the app takes shape."
+    "text": "A step-by-step guide to using the GLASSBOX application.\nThe app opens on the Case tab, which frames the investigation and shows the system health line across all 23 rounds. Use the Guided tour button at the top left for a five step walkthrough of the main findings, or Explore freely to move through the tabs yourself. The Vital Signs tab breaks the health score into its four meters, Network shows who spoke to whom, Sandbox lets you test interventions, and Verdict presents the conclusion.\nThe app is best viewed full screen.\n\nOpen the app in a new tab\n\n\n\nIf the embedded view above is slow to load, the app may be waking from sleep on the free hosting tier. Give it a few seconds, or use the open in a new tab button for the full experience."
   },
   {
     "objectID": "about.html",
@@ -53,7 +53,7 @@
     "href": "index.html",
     "title": "Anatomy of an Embargo Breach",
     "section": "",
-    "text": "Welcome to our ISSS608 Visual Analytics project.\nThis site documents our team’s work building an interactive Shiny application that investigates how a corporate merger embargo was broken by a team of AI communication agents. Use the navigation bar to move through our proposal, methodology, findings, and the application itself.\nOur challenge is based on the VAST Challenge 2026 Mini-Challenge 1."
+    "text": "Welcome to our ISSS608 Visual Analytics project.\nThis site documents our team’s work building an interactive Shiny application that investigates how a corporate merger embargo was broken by a team of AI communication agents. Use the navigation bar to move through our proposal, methodology, findings, and the application itself.\nOur challenge is based on the VAST Challenge 2026 Mini-Challenge 1.\n\nLaunch the GLASSBOX app"
   },
   {
     "objectID": "meeting_minutes.html",
