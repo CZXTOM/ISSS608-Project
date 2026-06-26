@@ -1,5 +1,4 @@
 ---
-title: "Anatomy of an Embargo Breach"
 pagetitle: "Anatomy of an Embargo Breach"
 page-layout: custom
 toc: false
