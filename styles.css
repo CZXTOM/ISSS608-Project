@@ -321,36 +321,45 @@ nav[role="doc-toc"] ul > li > a.active {
 }
 
 /* ----------------------------------------------------------------------------
-   reveal on scroll  (safe: only hides when JS is on)
+   reveal on scroll  (children rise and focus in, in sequence)
+   safe: only hides when JS is on
    -------------------------------------------------------------------------- */
-.js-enabled .reveal,
-.js-enabled main.content section.level2 {
+.js-enabled .reveal > *,
+.js-enabled main.content section.level2 > * {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity .65s var(--gb-ease), transform .65s var(--gb-ease);
+  transform: translateY(28px);
+  transition: opacity .7s var(--gb-ease), transform .8s var(--gb-ease);
   will-change: opacity, transform;
 }
-.reveal.is-visible,
-main.content section.level2.is-visible {
+.reveal.is-visible > *,
+main.content section.level2.is-visible > * {
   opacity: 1;
   transform: none;
 }
-/* staggered children inside a revealed block */
-.js-enabled .reveal .stagger > * {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity .6s var(--gb-ease), transform .6s var(--gb-ease);
+/* stagger the first several children of each revealed block */
+.reveal.is-visible > *:nth-child(1), main.content section.level2.is-visible > *:nth-child(1) { transition-delay: .04s; }
+.reveal.is-visible > *:nth-child(2), main.content section.level2.is-visible > *:nth-child(2) { transition-delay: .13s; }
+.reveal.is-visible > *:nth-child(3), main.content section.level2.is-visible > *:nth-child(3) { transition-delay: .22s; }
+.reveal.is-visible > *:nth-child(4), main.content section.level2.is-visible > *:nth-child(4) { transition-delay: .31s; }
+.reveal.is-visible > *:nth-child(5), main.content section.level2.is-visible > *:nth-child(5) { transition-delay: .40s; }
+.reveal.is-visible > *:nth-child(6), main.content section.level2.is-visible > *:nth-child(6) { transition-delay: .49s; }
+
+/* the accent line in a revealed label draws itself */
+.js-enabled .reveal > .gb-label::before {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .6s var(--gb-ease) .25s;
 }
-.reveal.is-visible .stagger > * { opacity: 1; transform: none; }
-.reveal.is-visible .stagger > *:nth-child(1) { transition-delay: .05s; }
-.reveal.is-visible .stagger > *:nth-child(2) { transition-delay: .14s; }
-.reveal.is-visible .stagger > *:nth-child(3) { transition-delay: .23s; }
-.reveal.is-visible .stagger > *:nth-child(4) { transition-delay: .32s; }
+.reveal.is-visible > .gb-label::before { transform: scaleX(1); }
+
+/* stat blocks lift on hover */
+.gb-stat { transition: transform .3s var(--gb-spring); }
+.gb-stat:hover { transform: translateY(-5px); }
 
 /* reduced motion: show everything, no transforms */
-.js-enabled.gb-reduce .reveal,
-.js-enabled.gb-reduce main.content section.level2,
-.js-enabled.gb-reduce .reveal .stagger > * {
+.js-enabled.gb-reduce .reveal > *,
+.js-enabled.gb-reduce main.content section.level2 > *,
+.js-enabled.gb-reduce .reveal > .gb-label::before {
   opacity: 1 !important;
   transform: none !important;
   transition: none !important;
