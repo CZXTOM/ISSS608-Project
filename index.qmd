@@ -5,7 +5,7 @@ page-layout: custom
 toc: false
 ---
 
-::: {=html}
+```{=html}
 <div class="gb-progress"></div>
 
 <div class="gb-home">
@@ -170,4 +170,4 @@ toc: false
   </section>
 
 </div>
-:::
+```
