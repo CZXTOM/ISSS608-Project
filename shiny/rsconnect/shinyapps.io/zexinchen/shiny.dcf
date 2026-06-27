@@ -5,6 +5,6 @@ account: zexinchen
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 17505103
-bundleId: 12182066
+bundleId: 12182568
 url: https://zexinchen.shinyapps.io/shiny/
 version: 1

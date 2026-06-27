@@ -1,7 +1,0 @@
----
-title: "Visualisation"
-toc: true
----
-
-The visual encodings and interactive techniques used in the application, and the
-reasoning behind each design choice.

@@ -70,12 +70,16 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<script>(function(){var r=document.documentElement;r.classList.add('js-enabled');if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('gb-reduce');}})();</script>
 
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -100,25 +104,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./proposal.html"> 
 <span class="menu-text">Proposal</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-methodology" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Methodology</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-methodology">    
-        <li>
-    <a class="dropdown-item" href="./methodology/data_preparation.html">
- <span class="dropdown-text">Data Preparation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./methodology/analysis.html">
- <span class="dropdown-text">Analysis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./methodology/visualisation.html">
- <span class="dropdown-text">Visualisation</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="./findings.html"> 
 <span class="menu-text">Findings</span></a>
@@ -126,10 +111,6 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./poster.html"> 
 <span class="menu-text">Poster</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./meeting_minutes.html"> 
-<span class="menu-text">Meeting Minutes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./user_guide.html"> 
@@ -161,9 +142,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -186,9 +165,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Introduce the team members and their roles here.</p>
+<p>We are three MITB students at Singapore Management University, working on this project for ISSS608 Visual Analytics and Applications.</p>
+<p>Each of us first investigated the TenantThread embargo breach on our own in Take-home Exercise 2, and we independently reached the same reading of the case. We then brought our three approaches together into one investigation console, GLASSBOX, built around a single system health score that anyone can take apart and test.</p>
+<section id="chen-zexin" class="level2">
+<h2 class="anchored" data-anchor-id="chen-zexin">Chen ZeXin</h2>
+<p>Built the GLASSBOX application and the system health model that runs through it, from the four meters and the network view to the counterfactual sandbox, along with the project website.</p>
+</section>
+<section id="meng-tingyu" class="level2">
+<h2 class="anchored" data-anchor-id="meng-tingyu">Meng Tingyu</h2>
+<p>Led the data preparation and the analysis of the agents’ private reasoning, the shift from deliberation to reaction to justification over the course of the case.</p>
+</section>
+<section id="meng-xinyu" class="level2">
+<h2 class="anchored" data-anchor-id="meng-xinyu">Meng Xinyu</h2>
+<p>Led the network analysis and the comparison of normal against crisis behaviour, finding the decision core and the off-pattern actions that pointed to it.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -592,6 +584,99 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<script>
+(function () {
+  var root = document.documentElement;
+  var reduce = root.classList.contains("gb-reduce");
+
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+  function fmt(el, val) {
+    var d = parseInt(el.getAttribute("data-decimals") || "0", 10);
+    return (el.getAttribute("data-prefix") || "") + val.toFixed(d) + (el.getAttribute("data-suffix") || "");
+  }
+  function setFinal(el) {
+    el.textContent = fmt(el, parseFloat(el.getAttribute("data-count")));
+    el.dataset.done = "1";
+  }
+  function animateCount(el) {
+    if (el.dataset.done) return;
+    el.dataset.done = "1";
+    var target = parseFloat(el.getAttribute("data-count"));
+    var dur = 1100, start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(el, target * e);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = fmt(el, target);
+    }
+    requestAnimationFrame(step);
+  }
+
+  ready(function () {
+    var reveals = [].slice.call(
+      document.querySelectorAll(".reveal, .gb-draw, main.content section.level2")
+    );
+    var counters = [].slice.call(document.querySelectorAll("[data-count]"));
+
+    if (reduce) {
+      reveals.forEach(function (el) { el.classList.add("is-visible"); });
+      counters.forEach(setFinal);
+      return;
+    }
+
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+      reveals.forEach(function (el) { io.observe(el); });
+    } else {
+      reveals.forEach(function (el) { el.classList.add("is-visible"); });
+    }
+
+    function checkCounters() {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      for (var i = counters.length - 1; i >= 0; i--) {
+        var el = counters[i];
+        if (el.dataset.done) { counters.splice(i, 1); continue; }
+        var r = el.getBoundingClientRect();
+        if (r.bottom < 0) { setFinal(el); counters.splice(i, 1); }
+        else if (r.top < vh * 0.9 && r.bottom > 0) { animateCount(el); counters.splice(i, 1); }
+      }
+    }
+    var ticking = false;
+    function onScroll() {
+      if (!ticking) { requestAnimationFrame(function () { checkCounters(); ticking = false; }); ticking = true; }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    checkCounters();
+    setTimeout(checkCounters, 200);
+    window.addEventListener("load", checkCounters);
+
+    var bar = document.querySelector(".gb-progress");
+    if (bar) {
+      var t2 = false;
+      function up() {
+        var h = document.documentElement;
+        var max = h.scrollHeight - h.clientHeight;
+        bar.style.width = (max > 0 ? (h.scrollTop / max * 100) : 0).toFixed(2) + "%";
+        t2 = false;
+      }
+      window.addEventListener("scroll", function () {
+        if (!t2) { requestAnimationFrame(up); t2 = true; }
+      }, { passive: true });
+      up();
+    }
+  });
+})();
+</script>
 
 
 

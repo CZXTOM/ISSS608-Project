@@ -18,7 +18,7 @@ caseUI <- function(id) {
           style = sprintf("font-size:1.05rem;font-weight:600;color:%s;cursor:pointer;", COL$ink),
           "Was this a deliberate leak, or did the oversight system break down?"),
         htmltools::p(style = "margin:10px 0 0;",
-          "The evidence points to a third answer. The safeguard was neither hacked nor crashed. It was talked past. Under existential financial pressure the agents reframed a leak into a chain of locally defensible steps, and the monitor was argued into co-signing each one before falling silent. The embargo died of a thousand defensible cuts.")),
+          "The evidence points to a third answer. The safeguard was never hacked and never crashed. Under heavy financial pressure the team reframed a leak as a chain of small, defensible steps, and the monitor approved each one before going quiet. No single step was wrongdoing on its own, but together they were enough to break the embargo.")),
 
       # three orientation tiles, each opens a closeable popover
       htmltools::div(

@@ -1,5 +1,29 @@
 ---
 title: "The Team"
+toc: false
 ---
 
-Introduce the team members and their roles here.
+We are three MITB students at Singapore Management University, working on this
+project for ISSS608 Visual Analytics and Applications.
+
+Each of us first investigated the TenantThread embargo breach on our own in
+Take-home Exercise 2, and we independently reached the same reading of the case.
+We then brought our three approaches together into one investigation console,
+GLASSBOX, built around a single system health score that anyone can take apart
+and test.
+
+## Chen ZeXin
+
+Built the GLASSBOX application and the system health model that runs through it,
+from the four meters and the network view to the counterfactual sandbox, along
+with the project website.
+
+## Meng Tingyu
+
+Led the data preparation and the analysis of the agents' private reasoning, the
+shift from deliberation to reaction to justification over the course of the case.
+
+## Meng Xinyu
+
+Led the network analysis and the comparison of normal against crisis behaviour,
+finding the decision core and the off-pattern actions that pointed to it.

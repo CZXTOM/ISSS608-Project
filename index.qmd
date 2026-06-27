@@ -162,7 +162,6 @@ toc: false
       </div>
       <div class="gb-cta-links">
         <a href="proposal.html">Proposal</a>
-        <a href="methodology/analysis.html">Methodology</a>
         <a href="findings.html">Findings</a>
         <a href="about.html">The team</a>
       </div>

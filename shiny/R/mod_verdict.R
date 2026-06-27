@@ -36,12 +36,9 @@ verdictServer <- function(id) {
       seen <- rv_seen()
       # third box requires both first two to have been opened
       if (ch == "talked" && !all(c("leak","breakdown") %in% seen)) return()
-      if (!is.null(rv_open()) && rv_open() == ch) {
-        rv_open(NULL)
-      } else {
-        rv_open(ch)
-        if (!(ch %in% seen)) rv_seen(c(seen, ch))
-      }
+      # selecting a box opens it; clicking the same box again keeps it open
+      rv_open(ch)
+      if (!(ch %in% seen)) rv_seen(c(seen, ch))
     })
 
     # ---- helper renderers ----

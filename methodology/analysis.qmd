@@ -1,7 +1,0 @@
----
-title: "Analysis"
-toc: true
----
-
-The analytical methods used, including any network measures such as betweenness
-and closeness, and how they help answer the challenge questions.

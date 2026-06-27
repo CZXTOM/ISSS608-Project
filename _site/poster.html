@@ -70,12 +70,16 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<script>(function(){var r=document.documentElement;r.classList.add('js-enabled');if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('gb-reduce');}})();</script>
 
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -100,25 +104,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./proposal.html"> 
 <span class="menu-text">Proposal</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-methodology" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Methodology</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-methodology">    
-        <li>
-    <a class="dropdown-item" href="./methodology/data_preparation.html">
- <span class="dropdown-text">Data Preparation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./methodology/analysis.html">
- <span class="dropdown-text">Analysis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./methodology/visualisation.html">
- <span class="dropdown-text">Visualisation</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="./findings.html"> 
 <span class="menu-text">Findings</span></a>
@@ -126,10 +111,6 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link active" href="./poster.html" aria-current="page"> 
 <span class="menu-text">Poster</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./meeting_minutes.html"> 
-<span class="menu-text">Meeting Minutes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./user_guide.html"> 
@@ -158,14 +139,10 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -186,11 +163,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Our project poster will be embedded here once complete. Due 1 July 2026.</p>
+<div class="gb-home">
+  <section class="gb-beat" style="min-height:60vh; display:flex; align-items:center;">
+    <div class="gb-beat-inner reveal" style="text-align:center; margin:0 auto;">
+      <div class="gb-label" style="justify-content:center;">Coming soon</div>
+      <h2 class="gb-beat-head" style="margin-left:auto; margin-right:auto;">The project poster</h2>
+      <p class="gb-beat-text" style="margin-left:auto; margin-right:auto;">Our poster summarises the whole investigation on a single page. It is due on 1 July 2026 and will appear here once it is finalised.</p>
+      <div class="gb-cta-row" style="justify-content:center; margin-top:1.5rem;">
+        <a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="gb-btn gb-btn-primary">Launch the GLASSBOX app</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!--
+  WHEN THE POSTER IS READY, replace the section above with the poster.
+  Put the file in an images/ folder, then use one of these.
+
+  Image (PNG or JPG):
+  ![Project poster](images/poster.png){fig-alt="GLASSBOX project poster" width=100%}
+
+  PDF embed:
+  <iframe src="images/poster.pdf" width="100%" height="1100" style="border:1px solid rgba(28,43,51,0.10); border-radius:10px;"></iframe>
+-->
 
 
 
-</main> <!-- /main -->
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -592,6 +591,99 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<script>
+(function () {
+  var root = document.documentElement;
+  var reduce = root.classList.contains("gb-reduce");
+
+  function ready(fn) {
+    if (document.readyState !== "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  }
+  function fmt(el, val) {
+    var d = parseInt(el.getAttribute("data-decimals") || "0", 10);
+    return (el.getAttribute("data-prefix") || "") + val.toFixed(d) + (el.getAttribute("data-suffix") || "");
+  }
+  function setFinal(el) {
+    el.textContent = fmt(el, parseFloat(el.getAttribute("data-count")));
+    el.dataset.done = "1";
+  }
+  function animateCount(el) {
+    if (el.dataset.done) return;
+    el.dataset.done = "1";
+    var target = parseFloat(el.getAttribute("data-count"));
+    var dur = 1100, start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(el, target * e);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = fmt(el, target);
+    }
+    requestAnimationFrame(step);
+  }
+
+  ready(function () {
+    var reveals = [].slice.call(
+      document.querySelectorAll(".reveal, .gb-draw, main.content section.level2")
+    );
+    var counters = [].slice.call(document.querySelectorAll("[data-count]"));
+
+    if (reduce) {
+      reveals.forEach(function (el) { el.classList.add("is-visible"); });
+      counters.forEach(setFinal);
+      return;
+    }
+
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+      reveals.forEach(function (el) { io.observe(el); });
+    } else {
+      reveals.forEach(function (el) { el.classList.add("is-visible"); });
+    }
+
+    function checkCounters() {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      for (var i = counters.length - 1; i >= 0; i--) {
+        var el = counters[i];
+        if (el.dataset.done) { counters.splice(i, 1); continue; }
+        var r = el.getBoundingClientRect();
+        if (r.bottom < 0) { setFinal(el); counters.splice(i, 1); }
+        else if (r.top < vh * 0.9 && r.bottom > 0) { animateCount(el); counters.splice(i, 1); }
+      }
+    }
+    var ticking = false;
+    function onScroll() {
+      if (!ticking) { requestAnimationFrame(function () { checkCounters(); ticking = false; }); ticking = true; }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    checkCounters();
+    setTimeout(checkCounters, 200);
+    window.addEventListener("load", checkCounters);
+
+    var bar = document.querySelector(".gb-progress");
+    if (bar) {
+      var t2 = false;
+      function up() {
+        var h = document.documentElement;
+        var max = h.scrollHeight - h.clientHeight;
+        bar.style.width = (max > 0 ? (h.scrollTop / max * 100) : 0).toFixed(2) + "%";
+        t2 = false;
+      }
+      window.addEventListener("scroll", function () {
+        if (!t2) { requestAnimationFrame(up); t2 = true; }
+      }, { passive: true });
+      up();
+    }
+  });
+})();
+</script>
 
 
 

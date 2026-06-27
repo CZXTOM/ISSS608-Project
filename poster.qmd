@@ -1,5 +1,31 @@
 ---
 title: "Poster"
+page-layout: custom
+toc: false
 ---
 
-Our project poster will be embedded here once complete. Due 1 July 2026.
+```{=html}
+<div class="gb-home">
+  <section class="gb-beat" style="min-height:60vh; display:flex; align-items:center;">
+    <div class="gb-beat-inner reveal" style="text-align:center; margin:0 auto;">
+      <div class="gb-label" style="justify-content:center;">Coming soon</div>
+      <h2 class="gb-beat-head" style="margin-left:auto; margin-right:auto;">The project poster</h2>
+      <p class="gb-beat-text" style="margin-left:auto; margin-right:auto;">Our poster summarises the whole investigation on a single page. It is due on 1 July 2026 and will appear here once it is finalised.</p>
+      <div class="gb-cta-row" style="justify-content:center; margin-top:1.5rem;">
+        <a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="gb-btn gb-btn-primary">Launch the GLASSBOX app</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!--
+  WHEN THE POSTER IS READY, replace the section above with the poster.
+  Put the file in an images/ folder, then use one of these.
+
+  Image (PNG or JPG):
+  ![Project poster](images/poster.png){fig-alt="GLASSBOX project poster" width=100%}
+
+  PDF embed:
+  <iframe src="images/poster.pdf" width="100%" height="1100" style="border:1px solid rgba(28,43,51,0.10); border-radius:10px;"></iframe>
+-->
+```

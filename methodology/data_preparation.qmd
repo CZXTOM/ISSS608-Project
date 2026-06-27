@@ -1,7 +1,0 @@
----
-title: "Data Preparation"
-toc: true
----
-
-How the raw Mini-Challenge 1 JSON is loaded, flattened, and cleaned into tidy
-tables ready for analysis and the app.
