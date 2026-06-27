@@ -237,6 +237,81 @@ main.content > section.level2 > h2::before {
   margin: -.2rem 0 .8rem;
 }
 
+/* ----------------------------------------------------------------------------
+   user guide
+   framed annotated screenshots, a task lead-in, a quick-start box, a key
+   -------------------------------------------------------------------------- */
+.gb-shot {
+  margin: 1.4rem 0 .4rem;
+}
+.gb-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--gb-line);
+  border-radius: 10px;
+  box-shadow: 0 12px 30px -16px rgba(28,43,51,0.28);
+  background: var(--gb-panel);
+}
+.gb-shot figcaption,
+.gb-shot p {
+  font-family: var(--gb-mono);
+  font-size: .8rem;
+  letter-spacing: .02em;
+  color: var(--gb-muted);
+  margin-top: .55rem;
+}
+/* placeholder look before a screenshot is dropped in */
+.gb-shot img[src$=".png"]:not([src*="http"]) {
+  min-height: 120px;
+}
+
+/* a short bold task lead-in line above the steps */
+.gb-task {
+  font-family: var(--gb-sans);
+  font-weight: 600;
+  color: var(--gb-ink);
+  margin: .2rem 0 .6rem;
+}
+
+/* quick-start box */
+.gb-quickstart {
+  background: var(--gb-panel);
+  border: 1px solid var(--gb-line);
+  border-radius: 12px;
+  padding: 1.3rem 1.6rem;
+  margin: 1.6rem 0 2rem;
+}
+.gb-quickstart h4 {
+  font-family: var(--gb-mono);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gb-blue);
+  margin: 0 0 .7rem;
+}
+.gb-quickstart ol { margin: 0; padding-left: 1.2rem; }
+.gb-quickstart li { margin: .3rem 0; }
+
+/* small key for the health zones */
+.gb-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 1rem 0 .4rem;
+  font-family: var(--gb-mono);
+  font-size: .82rem;
+  color: var(--gb-ink);
+}
+.gb-key span { display: inline-flex; align-items: center; gap: .45rem; }
+.gb-key i {
+  width: 14px; height: 14px; border-radius: 3px; display: inline-block;
+}
+.gb-key .z-blue   { background: var(--gb-blue); }
+.gb-key .z-amber  { background: var(--gb-amber, #E8A33D); }
+.gb-key .z-orange { background: var(--gb-orange); }
+
 main.content p,
 main.content li { color: #2c3b42; }
 

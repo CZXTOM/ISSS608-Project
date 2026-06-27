@@ -236,12 +236,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-around" id="toc-getting-around" class="nav-link active" data-scroll-target="#getting-around">Getting around</a></li>
-  <li><a href="#case" id="toc-case" class="nav-link" data-scroll-target="#case">Case</a></li>
-  <li><a href="#vital-signs" id="toc-vital-signs" class="nav-link" data-scroll-target="#vital-signs">Vital Signs</a></li>
-  <li><a href="#network" id="toc-network" class="nav-link" data-scroll-target="#network">Network</a></li>
-  <li><a href="#sandbox" id="toc-sandbox" class="nav-link" data-scroll-target="#sandbox">Sandbox</a></li>
-  <li><a href="#verdict" id="toc-verdict" class="nav-link" data-scroll-target="#verdict">Verdict</a></li>
+  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link active" data-scroll-target="#before-you-start">Before you start</a></li>
+  <li><a href="#take-the-guided-tour" id="toc-take-the-guided-tour" class="nav-link" data-scroll-target="#take-the-guided-tour">Take the guided tour</a></li>
+  <li><a href="#read-the-case" id="toc-read-the-case" class="nav-link" data-scroll-target="#read-the-case">Read the case</a></li>
+  <li><a href="#see-which-force-was-failing" id="toc-see-which-force-was-failing" class="nav-link" data-scroll-target="#see-which-force-was-failing">See which force was failing</a></li>
+  <li><a href="#find-who-was-at-the-centre" id="toc-find-who-was-at-the-centre" class="nav-link" data-scroll-target="#find-who-was-at-the-centre">Find who was at the centre</a></li>
+  <li><a href="#test-what-would-have-changed-it" id="toc-test-what-would-have-changed-it" class="nav-link" data-scroll-target="#test-what-would-have-changed-it">Test what would have changed it</a></li>
+  <li><a href="#reach-the-verdict" id="toc-reach-the-verdict" class="nav-link" data-scroll-target="#reach-the-verdict">Reach the verdict</a></li>
+  <li><a href="#download-the-scoring-workbook" id="toc-download-the-scoring-workbook" class="nav-link" data-scroll-target="#download-the-scoring-workbook">Download the scoring workbook</a></li>
   </ul>
 </nav>
     </div>
@@ -268,37 +270,180 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>GLASSBOX is an investigation console. It takes the embargo breach apart into one health score, four underlying meters, a network, a what-if sandbox, and a verdict, and lets you explore each on your own terms. This guide walks through how to get around and what each part does. The app is best viewed full screen.</p>
+<p>GLASSBOX is an investigation console for the TenantThread embargo breach. You do not need to write any code. It takes the case apart into one System Health score, the four forces underneath it, a network of the team, a what-if sandbox, and a verdict, and lets you explore each one yourself. This guide is task based. Each section is one thing you might want to do, with the steps and a screenshot of the screen you will see.</p>
+<p>The app is best viewed full screen. Open it in its own tab, or follow along in the embedded view below.</p>
 <div style="margin:1.2rem 0;">
 <p><a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="gb-btn gb-btn-primary">Open the app in a new tab</a></p>
 </div>
-<iframe src="https://zexinchen.shinyapps.io/shiny/" width="100%" height="900" style="border:1px solid rgba(28,43,51,0.10); border-radius:10px;" loading="lazy">
+<iframe src="https://zexinchen.shinyapps.io/shiny/" width="100%" height="820" style="border:1px solid rgba(28,43,51,0.10); border-radius:10px;" loading="lazy">
 </iframe>
-<p>If the embedded view above is slow to load, the app may be waking from sleep on the free hosting tier. Give it a few seconds, or use the button to open it full screen.</p>
-<section id="getting-around" class="level2">
-<h2 class="anchored" data-anchor-id="getting-around">Getting around</h2>
-<p>Two controls sit at the top of every screen. The round slider moves the whole application through time, from the calm weeks on the left to the hourly crisis day on the right, and the round label tells you the date and what happened that hour. The System Health gauge on the right shows the score for the round you are on, broken into its four meters underneath.</p>
-<p>Top left you will find two modes. Guided tour walks you through the case in five short steps, each with its own chart and the key numbers. Explore freely lets you roam the tabs in any order. Top right is a button to download the full scoring workbook as an Excel file, so you can check every meter and formula yourself.</p>
+<p>If the embedded view is slow, the app may be waking from sleep on the free hosting tier. Give it a few seconds, or use the button to open it full screen.</p>
+<div class="gb-quickstart">
+<h4 class="anchored">
+Quick start
+</h4>
+<ol>
+<li>
+Open the app, then take the guided tour for a five-step walk through the case.
+</li>
+<li>
+Drag the round slider at the top to move through time, from the calm weeks to the crisis day.
+</li>
+<li>
+On the “Case” screen, click any point on the health line to read what happened that round.
+</li>
+<li>
+When a force looks low, open “Vital Signs” to see which of the four meters was failing.
+</li>
+<li>
+Finish on “Verdict” to see the answer the evidence supports.
+</li>
+</ol>
+</div>
+<section id="before-you-start" class="level2">
+<h2 class="anchored" data-anchor-id="before-you-start">Before you start</h2>
+<p>Two controls sit at the top of every screen, and it helps to know them before you dig in.</p>
+<p>The round slider moves the whole application through time. The left end is the calm weeks, one step per business day, and the right end is the crisis day, one step per hour. Wherever you set it, every screen updates to that round. The System Health gauge shows the score for the round you are on, with its four meters listed underneath. At the top left you can switch between the guided tour and free exploration, and at the top right is a button to download the scoring workbook.</p>
+<div class="gb-shot">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ug-01-overview.png" class="img-fluid figure-img"></p>
+<figcaption>The GLASSBOX console on first load, with the round slider and System Health gauge along the top and the health line on the Case screen below.</figcaption>
+</figure>
+</div>
+<p>The main screen. The numbered labels mark the round slider, the System Health gauge, the mode switch, and the workbook button.</p>
+</div>
+<p>The health score uses three colour zones throughout the app, so a glance tells you how bad a round was.</p>
+<div class="gb-key">
+<p><span><i class="z-blue"></i> Healthy, 55 and above</span> <span><i class="z-amber"></i> Strained, 30 to 55</span> <span><i class="z-orange"></i> Critical, below 30</span></p>
+</div>
 </section>
-<section id="case" class="level2">
-<h2 class="anchored" data-anchor-id="case">Case</h2>
-<p>The opening screen frames the investigation and introduces the seven agents. Its main chart is the System Health line across all 23 rounds, with the two lowest points marked in red. Click any point on the line to read what happened that round, which also moves the slider and the rest of the app to that moment. Start here to see the shape of the whole case before you dig into why.</p>
+<section id="take-the-guided-tour" class="level2">
+<h2 class="anchored" data-anchor-id="take-the-guided-tour">Take the guided tour</h2>
+<p><strong>The fastest way to understand the case.</strong> The tour is a five-step walkthrough, each step with its own chart and the key numbers.</p>
+<ol type="1">
+<li>At the top left, click <strong>Guided tour</strong>.</li>
+<li>Read each step, then use <strong>Next</strong> and <strong>Back</strong> to move between the five steps.</li>
+<li>Click the <strong>X</strong> in the corner to close the tour and explore on your own.</li>
+</ol>
+<div class="gb-shot">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ug-02-tour.png" class="img-fluid figure-img"></p>
+<figcaption>The guided tour open as a centered panel over the app, showing one step with a chart, key figures, and the next and back controls.</figcaption>
+</figure>
+</div>
+<p>The guided tour. Use next and back to move through the five steps, and the X to close it.</p>
+</div>
 </section>
-<section id="vital-signs" class="level2">
-<h2 class="anchored" data-anchor-id="vital-signs">Vital Signs</h2>
-<p>This screen opens the health score into its four meters, each on its own tab. Pressure shows the market sentiment and the stock signal that drove the strain, with a note on the contaminated price data. Transparency shows the mix of open, private, and covert channels and how the talk moved off the record. Decision making shows who was steering out of their role, with a chart of who held the public voice in the calm weeks against the crisis day. Accountability shows whether the Judge met its three duties of escalation, responsiveness, and restraint, with a heatmap of where the oversight failed. Each meter feeds the single health score on equal footing, so a low meter here is a low point on the Case line.</p>
+<section id="read-the-case" class="level2">
+<h2 class="anchored" data-anchor-id="read-the-case">Read the case</h2>
+<p><strong>Start here to see the shape of the whole case.</strong> The “Case” screen introduces the seven agents and shows the System Health line across all 23 rounds, with the two lowest points marked.</p>
+<ol type="1">
+<li>Open the “Case” tab.</li>
+<li>Click any point on the health line to read what happened that round.</li>
+<li>Notice that clicking also moves the slider and the rest of the app to that moment, so you can carry a round across the other screens.</li>
+</ol>
+<div class="gb-shot">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ug-03-case.png" class="img-fluid figure-img"></p>
+<figcaption>The Case screen with the System Health line across 23 rounds, a low point clicked, and a panel describing what happened that round.</figcaption>
+</figure>
+</div>
+<p>The Case screen. Click any point on the line to read that round and move the whole app to it.</p>
+</div>
 </section>
-<section id="network" class="level2">
-<h2 class="anchored" data-anchor-id="network">Network</h2>
-<p>A reply network of the seven agents, drawn from who responded to whom. Node size and colour carry the centrality measures, so the agents who brokered the decisions stand out from those on the edges. Switch between centrality measures to ask different questions, pick a time window to compare the calm weeks against the crisis day, and click an agent to highlight its connections. This is where you see whether the breach came from the core of the team or the fringe.</p>
+<section id="see-which-force-was-failing" class="level2">
+<h2 class="anchored" data-anchor-id="see-which-force-was-failing">See which force was failing</h2>
+<p><strong>When the health score drops, this is where you find out why.</strong> The “Vital Signs” screen opens the score into its four meters, each on its own tab.</p>
+<ol type="1">
+<li>Open the “Vital Signs” tab.</li>
+<li>Switch between <strong>Pressure</strong>, <strong>Transparency</strong>, <strong>Decision-making</strong>, and <strong>Accountability</strong> to see each force.</li>
+<li>Read each meter against the round you are on. A low meter here is a low point on the Case line, because all four feed the single score equally.</li>
+</ol>
+<div class="gb-shot">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ug-04-vitalsigns.png" class="img-fluid figure-img"></p>
+<figcaption>The Vital Signs screen showing the four meter tabs along the top and the chart for one meter below.</figcaption>
+</figure>
+</div>
+<p>Vital Signs. The four tabs are the four forces. Switch between them to see which one was failing.</p>
+</div>
 </section>
-<section id="sandbox" class="level2">
-<h2 class="anchored" data-anchor-id="sandbox">Sandbox</h2>
-<p>A replay of the breach chain, step by step, with a panel of interventions you can switch on and off. As you change them, the app recomputes the health at the breach hour from the underlying data and shows whether each step is intercepted or still gets through. Use it to find the single lever that breaks the chain, and the combination needed to lift the system back to the safe zone.</p>
+<section id="find-who-was-at-the-centre" class="level2">
+<h2 class="anchored" data-anchor-id="find-who-was-at-the-centre">Find who was at the centre</h2>
+<p><strong>This is where you see whether the breach came from the core of the team or the edges.</strong> The “Network” screen draws the reply network from who responded to whom.</p>
+<ol type="1">
+<li>Open the “Network” tab.</li>
+<li>Use the centrality switch to change what node size and colour mean, since each measure answers a different question.</li>
+<li>Use the time window to compare the calm weeks against the crisis day.</li>
+<li>Click an agent to highlight its connections.</li>
+</ol>
+<div class="gb-shot">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ug-05-network.png" class="img-fluid figure-img"></p>
+<figcaption>The Network screen with the seven agents as nodes, sized and coloured by centrality, and the controls to switch measure and time window.</figcaption>
+</figure>
+</div>
+<p>The Network screen. The agents who brokered the decisions sit at the centre, not the edges.</p>
+</div>
 </section>
-<section id="verdict" class="level2">
-<h2 class="anchored" data-anchor-id="verdict">Verdict</h2>
-<p>The closing screen lays out the three competing explanations, a deliberate leak, an oversight breakdown, and a compounding chain. Open each one to see the evidence for and against, then follow the chain that the data supports. This is where the investigation lands on its answer.</p>
+<section id="test-what-would-have-changed-it" class="level2">
+<h2 class="anchored" data-anchor-id="test-what-would-have-changed-it">Test what would have changed it</h2>
+<p><strong>Use this to find what would have had to change for the embargo to hold.</strong> The “Sandbox” replays the breach chain step by step, with interventions you can switch on and off.</p>
+<ol type="1">
+<li>Open the “Sandbox” tab.</li>
+<li>Turn an intervention on or off in the panel.</li>
+<li>Watch the health at the breach hour recompute, and see whether each step is intercepted or still gets through.</li>
+<li>Try one intervention at a time to find the single lever that breaks the chain, then combine them to lift the system back to the safe zone.</li>
+</ol>
+<div class="gb-shot">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ug-06-sandbox.png" class="img-fluid figure-img"></p>
+<figcaption>The Sandbox screen with the breach chain laid out, the intervention toggles, and the recomputed health at the breach hour.</figcaption>
+</figure>
+</div>
+<p>The Sandbox. Switch interventions on and off and watch the breach-hour health recompute.</p>
+</div>
+</section>
+<section id="reach-the-verdict" class="level2">
+<h2 class="anchored" data-anchor-id="reach-the-verdict">Reach the verdict</h2>
+<p><strong>This is where the investigation lands on its answer.</strong> The “Verdict” screen lays out the three competing explanations and walks you through the evidence.</p>
+<ol type="1">
+<li>Open the “Verdict” tab.</li>
+<li>Open the two named explanations first, the deliberate leak and the oversight breakdown, to see the evidence for and against each.</li>
+<li>Examining both unlocks the third, the compounding chain, which is the reading the data supports.</li>
+</ol>
+<div class="gb-shot">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ug-07-verdict.png" class="img-fluid figure-img"></p>
+<figcaption>The Verdict screen with the three explanation boxes, two of them open, and the third unlocked.</figcaption>
+</figure>
+</div>
+<p>The Verdict screen. Open the two named explanations first to unlock the third.</p>
+</div>
+</section>
+<section id="download-the-scoring-workbook" class="level2">
+<h2 class="anchored" data-anchor-id="download-the-scoring-workbook">Download the scoring workbook</h2>
+<p><strong>To check every meter and formula yourself.</strong> The workbook holds the health score and all four meters for every round, as an Excel file.</p>
+<ol type="1">
+<li>Click the <strong>Scoring workbook</strong> button at the top right of any screen.</li>
+<li>The file <code>GLASSBOX_health_scores.xlsx</code> downloads to your computer.</li>
+</ol>
+<div class="gb-shot">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ug-08-workbook.png" class="img-fluid figure-img"></p>
+<figcaption>The top right of the app with the scoring workbook download button highlighted.</figcaption>
+</figure>
+</div>
+<p>The workbook button sits at the top right of every screen.</p>
+</div>
 
 
 </section>
