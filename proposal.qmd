@@ -35,98 +35,143 @@ So the application is built around a single idea, a System Health score that run
 from 100 down to 0 across all 23 rounds. That one line shows the whole case at a
 glance, calm and high for the first twelve rounds, then collapsing through the
 crisis day. The score is not a black box. It is the average of four measurable
-forces, pressure, transparency, decision-making, and accountability, so a user
-can open the score up and see exactly which force was failing in any given hour.
-On top of that we let the user test the breach rather than just read about it,
-replaying the chain of events and switching interventions on and off to see what
-would have changed the outcome. Turning the breach into a health score you can
-decompose, and a chain you can rerun, is the part we think is new.
+forces, pressure, transparency, decision-making, and accountability, each
+normalised to its own worst moment in this incident, so a user can open the score
+up and see exactly which force was failing in any given hour. On top of that we
+let the user test the breach rather than just read about it, replaying the chain
+of events and switching interventions on and off to watch the health score
+recompute. Turning the breach into a health score you can decompose, and a chain
+you can rerun, is the part we think is new.
 
 # Problem Statement and Objectives
 
-The raw data is a single JSON file. It holds 23 rounds, 912 messages, and 7
-agents, and most of what matters is locked inside nested fields like the agents'
-private reasoning. Reading it by hand is not realistic, and a fixed set of charts
-forces everyone to accept one analyst's framing of the story. So we built an
-interactive Shiny application that lets a user investigate the breach on their
-own terms.
+The raw data is a single JSON file holding 23 rounds, 912 messages, and 7 agents,
+and most of what matters is locked inside nested fields like the agents' private
+reasoning. Reading it by hand is not realistic, and a fixed set of charts forces
+everyone to accept one analyst's framing. So we are building an interactive Shiny
+application that lets a user investigate the breach on their own terms.
 
-With the application, a user can do five things. They can see the System Health
-of the whole case on one line and find the moments where it collapsed. They can
-break that health score into its four driving forces and see which one was
-failing at any point in time. They can map the team as a network and find out
-which agents were central to how decisions flowed, so the core of the breach
-stands apart from the edges. They can replay the breach hour and switch
-interventions on and off, testing what would have had to change for the embargo
-to hold. And from all of that they can reach a defensible verdict on the real
-question, whether this looks like a deliberate leak, an oversight failure, or
-something else.
+With the application, a user can do five things.
+
+1. See the System Health of the whole case on one line and find the moments where
+   it collapsed.
+2. Break that health score into its four driving forces and see which one was
+   failing at any point in time.
+3. Map the team as a network and find which agents were central to how decisions
+   flowed, so the core of the breach stands apart from the edges.
+4. Replay the breach hour and switch interventions on and off, testing what would
+   have had to change for the embargo to hold.
+5. Reach a defensible verdict on the real question, whether this looks like a
+   deliberate leak, an oversight failure, or something else.
 
 # The Data
 
 The dataset is `MC1_final_00.json` from VAST Challenge 2026 Mini-Challenge 1. It
 contains 23 rounds. The first 13 are spaced one business day apart and cover the
 run up from 17 May to 4 June. The last 10 are hourly and cover the crisis itself
-on 5 June.
+on 5 June. Each round carries an environment block, a communications block with
+all 912 messages, and a participants block.
 
-Each round carries three blocks. The environment context gives the state of the
-world that hour, including a market snapshot with the stock price and sentiment.
-The communications block is the heart of it, holding all 912 messages. Every
-message records who sent it, which channel it went through, what type it was, a
-pointer to the message it replied to, the content itself, and for many of them an
-internal state field that captures what the agent was privately thinking. That
-private field is split into reacting, rationalizing, and deliberating. The
-participants block lists who was present in each round.
+The table below lists the fields we rely on.
 
-In network terms the communications are link records, since each message ties a
-sender to a recipient and those ties build the reply network we analyse later.
+| Block | Field | What we use it for |
+|---|---|---|
+| Environment | market sentiment | A clean sentiment reading every round, our backbone signal for pressure |
+| Environment | stock price | The share price, reliable before the crisis and contaminated on 5 June |
+| Communications | sender and recipient | Who sent each message and to whom, the basis of the reply network |
+| Communications | channel | One of six channels, monitored, private, or public |
+| Communications | type | The kind of message sent |
+| Communications | responding to | A pointer to the message being replied to, used to build the reply links |
+| Communications | content | The message text itself |
+| Communications | internal state | The agent's private reasoning, split into reacting, rationalizing, and deliberating |
+| Participants | present agents | Which of the seven agents were active that round |
 
-Seven agents take part. There is a Legal agent, a Platform-Trust agent, a PR
-agent, a Social-Manager agent, two interns, and a Judge agent that acts as the
-automated compliance monitor. Six channels appear. Some are monitored, like the
-team room and one to one chats. One is a private side huddle. Three are public,
-namely official posts, personal posts, and anonymous posts. The gap between the
-monitored channels and the unmonitored ones turns out to matter a great deal.
+Seven agents take part, a Legal agent, a Platform-Trust agent, a PR agent, a
+Social-Manager agent, two interns, and a Judge agent that acts as the automated
+compliance monitor.
 
-There is one data quality issue we have to handle with care. The stock price
-field is reliable before the crisis but becomes contaminated on 5 June. It starts
-carrying junk values, including literal NaN entries and at least one number that
-is actually the company's revenue rather than its share price. Because of that,
-we lean on market sentiment as a clean backbone signal for pressure over time,
-since it is recorded cleanly in every single round, and we treat the broken
-prices with care rather than pretending they form a smooth line.
+Six channels appear, and the split between them is central to the analysis. The
+team room and one to one chats are monitored. A side huddle is a private channel
+off to the side. Official posts, personal posts, and anonymous posts are public.
+The move from monitored channels into the private and unattributable ones is one
+of the clearest signals in the whole case.
+
+::: {.callout-important}
+## One data quality issue we handle with care
+
+The stock price field is reliable before the crisis but becomes contaminated on 5
+June, carrying junk values including literal NaN entries and at least one number
+that is the company's revenue rather than its share price. Because of that we lean
+on market sentiment as the clean backbone signal for pressure, since it is
+recorded cleanly in every round, and we treat the broken prices with care rather
+than pretending they form a smooth line.
+:::
 
 # Methodology and Analytical Approach
 
 Our plan moves from raw JSON to a working application in three stages.
 
-First comes data preparation. We read the nested JSON without letting R simplify
-it automatically, so we keep control over the shape of the tables. Then we
-flatten it into tidy tables. One row per message, one row per round of world
-state, and a table of reply links built from the responding to field. This shared
-backbone feeds every part of the app.
+## Data preparation
 
-Next is the analysis, which has two halves. The first half is the System Health
-model. For each round we score four forces on the same footing and average them
-into one health number. Pressure comes from the market sentiment and the stock
-signal. Transparency comes from how much of the traffic moved into hidden and
-unattributable channels. Decision-making comes from how much steering came from
-agents acting outside their role. Accountability comes from whether the Judge met
-its three duties of escalation, responsiveness, and restraint, combined so that a
-single severe failure dominates rather than being averaged away. The second half
-is the network. We treat the replies as a graph and measure each agent's role in
-it with several centrality measures, since each one answers a different question.
+We read the nested JSON without letting R simplify it automatically, so we keep
+control over the shape of the tables, then flatten it into three tidy tables. One
+row per message, one row per round of world state, and a table of reply links
+built from the responding to field. Per round we also count the signals the health
+model needs, the volume in the side huddle, personal posts, and anonymous posts,
+the number of messages carrying each kind of private reasoning, and the Judge's
+activity. This shared backbone feeds every part of the app.
+
+## The System Health model
+
+This is the analytical core. For each round we score four forces on the same
+footing, normalise each one from 0 to 100 against its own worst round in this
+incident, and combine them into a single health number.
+
+::: {.callout-tip}
+## How the score is built
+
+System Health equals 100 minus the average of the four normalised meters. Because
+it is a plain average of four equal parts, a drop of any size in one meter lifts
+health by a quarter of that amount. This is what makes the counterfactual later
+both honest and easy to read.
+:::
+
+The four meters are summarised below.
+
+| Meter | What it measures | Built from |
+|---|---|---|
+| Pressure | The external strain on the team | Market sentiment each round together with the stock signal, with the contaminated prices handled with care |
+| Transparency | How much of the conversation moved out of sight | The share of messages in the covert and unattributable channels, the side huddle, personal posts, and anonymous posts |
+| Decision-making | Whether the right agents were steering | The share of steering messages sent by agents acting outside their assigned role |
+| Accountability | Whether the monitor did its job | The Judge's three duties of escalation, responsiveness, and restraint, combined so a single severe failure dominates rather than being averaged away |
+
+## The network
+
+We treat the replies as a directed weighted graph and measure each agent's role
+with several centrality measures, since each one answers a different question.
 Degree shows who is most active. Betweenness finds the brokers who sit between
 others, which points straight at who was central to the leak. Eigenvector shows
 who is tied to other influential agents. Closeness shows who could reach the team
-fastest when things moved hour by hour.
+fastest when events moved hour by hour. We compute the network twice, once for the
+calm weeks and once for the crisis day, so the two can be compared side by side.
 
-Last is the visualisation and the interaction. Every view becomes something the
-user can control. They can move through time on a round slider, click any point
-on the health line to jump to that round, open each meter to see what drove it,
-switch the network between time windows and centrality measures, and replay the
-breach chain with interventions turned on or off. The whole point is to let
-people explore, not to hand them a fixed set of answers.
+## The counterfactual
+
+Because health is 100 minus the average of four meters, reducing any meter by an
+amount lifts health by a quarter of it. The Sandbox uses this directly. As the
+user switches interventions on and off, the application recomputes each meter from
+the raw per round data and rebuilds the health score at the breach hour, so the
+user can see which single action breaks the chain and what combination is needed
+to return the system to the safe zone.
+
+## Visualisation and interaction
+
+Every view becomes something the user can control. They can move through time on a
+round slider, click any point on the health line to jump to that round, open each
+meter to see what drove it, switch the network between time windows and centrality
+measures, and replay the breach chain with interventions turned on or off. A short
+guided tour walks a first time visitor through the five key beats of the case. The
+charts are interactive throughout, with hover and click handled by ggiraph.
 
 # Prototype and Storyboard
 
@@ -138,52 +183,42 @@ the symptom, through the four underlying causes, to a tested conclusion.
 The opening screen frames the investigation and introduces the seven agents. Its
 centrepiece is the System Health line across all 23 rounds, with the two lowest
 points marked. A user can click any point on the line to read what happened that
-round, and a round slider moves the whole application to that moment. This is
-where the user first sees the shape of the collapse.
+round, and a round slider moves the whole application to that moment.
 
 ## Vital Signs, the four causes
 
-This screen opens the health score up into its four meters, each on its own tab.
-Pressure shows the market sentiment and the stock signal feeding the strain.
-Transparency shows the mix of open, private, and covert channels and how the talk
-moved off the record. Decision-making shows who was steering out of their role,
-with a chart of who held the public voice in the calm weeks against the crisis
-day. Accountability shows whether the Judge met its three duties, with a heatmap
-of where the oversight failed. Each meter feeds the single health score on equal
-footing.
+This screen opens the health score into its four meters, each on its own tab.
+Pressure shows the market sentiment and stock signal feeding the strain.
+Transparency shows the mix of open, private, and covert channels. Decision-making
+shows who was steering out of their role, with a chart of who held the public
+voice in the calm weeks against the crisis day. Accountability shows whether the
+Judge met its three duties, with a heatmap of where the oversight failed.
 
 ## Network, who was at the centre
 
-A reply network of the seven agents, drawn from who responded to whom. Node size
-and colour carry the centrality measures, so the agents who brokered the flow of
-decisions stand out from those on the edges. A user can switch between centrality
-measures, pick a time window to compare the calm weeks against the crisis day,
-and click an agent to highlight its connections. This is where the user sees that
-the breach came from the core of the team rather than the fringe.
+A reply network of the seven agents, with node size and colour carrying the
+centrality measures, a switch between measures, and a time window to compare the
+calm weeks against the crisis day.
 
 ## Sandbox, what would have changed it
 
-A replay of the breach chain, step by step, with a panel of interventions the
-user can switch on and off. As interventions change, the application recomputes
-the health at the breach hour from the underlying data, so the user can see which
-single action breaks the chain and what combination is needed to return the
-system to the safe zone. This turns the counterfactual question into something a
-user can test rather than take on trust.
+A replay of the breach chain, step by step, with a panel of interventions the user
+can switch on and off while the health at the breach hour recomputes from the
+underlying data.
 
 ## Verdict, the conclusion
 
 The closing screen lays out the three competing explanations, a deliberate leak,
-an oversight breakdown, and a compounding chain, and walks through the evidence
-for and against each. It lands on the reading the data supports, that the breach
-was a chain of locally defensible steps rather than a single act of wrongdoing.
+an oversight breakdown, and a compounding chain, and walks through the evidence for
+and against each before landing on the reading the data supports.
 
 # R Packages
 
 | Package | What we use it for |
 |---|---|
 | tidyverse | Cleaning and reshaping the data |
-| jsonlite | Reading the nested JSON |
-| lubridate | Working with the timestamps |
+| jsonlite | Reading the nested JSON without auto simplification |
+| lubridate | Working with the round timestamps |
 | tidygraph, ggraph | Building and drawing the reply network |
 | igraph | Calculating network centrality measures |
 | ggiraph | Interactive charts with hover and click |
@@ -195,8 +230,8 @@ was a chain of locally defensible steps rather than a single act of wrongdoing.
 
 The Gantt chart below lays out our timeline from the proposal through to final
 submission. The main dates we are working toward are the proposal on 10 June, the
-bulk of the app build through late June, the poster on 1 July, the presentation
-on 4 July, and the final submission on 5 July.
+bulk of the app build through late June, the poster on 1 July, the presentation on
+4 July, and the final submission on 5 July.
 
 ```{r}
 #| label: gantt

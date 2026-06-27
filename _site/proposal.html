@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Chen ZeXin, Meng Tingyu, Meng Xinyu">
-<meta name="dcterms.date" content="2026-06-26">
+<meta name="dcterms.date" content="2026-06-27">
 
 <title>Project Proposal – Anatomy of an Embargo Breach</title>
 <style>
@@ -146,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
   ready(function () {
     var reveals = [].slice.call(
-      document.querySelectorAll(".reveal, .gb-draw, main.content section.level2")
+      document.querySelectorAll(".reveal, .gb-draw, main.content section")
     );
     var counters = [].slice.call(document.querySelectorAll("[data-count]"));
     if (reduce) {
@@ -277,7 +277,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#what-makes-this-different" id="toc-what-makes-this-different" class="nav-link" data-scroll-target="#what-makes-this-different"><span class="header-section-number">2</span> What Makes This Different</a></li>
   <li><a href="#problem-statement-and-objectives" id="toc-problem-statement-and-objectives" class="nav-link" data-scroll-target="#problem-statement-and-objectives"><span class="header-section-number">3</span> Problem Statement and Objectives</a></li>
   <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data"><span class="header-section-number">4</span> The Data</a></li>
-  <li><a href="#methodology-and-analytical-approach" id="toc-methodology-and-analytical-approach" class="nav-link" data-scroll-target="#methodology-and-analytical-approach"><span class="header-section-number">5</span> Methodology and Analytical Approach</a></li>
+  <li><a href="#methodology-and-analytical-approach" id="toc-methodology-and-analytical-approach" class="nav-link" data-scroll-target="#methodology-and-analytical-approach"><span class="header-section-number">5</span> Methodology and Analytical Approach</a>
+  <ul class="collapse">
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation"><span class="header-section-number">5.1</span> Data preparation</a></li>
+  <li><a href="#the-system-health-model" id="toc-the-system-health-model" class="nav-link" data-scroll-target="#the-system-health-model"><span class="header-section-number">5.2</span> The System Health model</a></li>
+  <li><a href="#the-network" id="toc-the-network" class="nav-link" data-scroll-target="#the-network"><span class="header-section-number">5.3</span> The network</a></li>
+  <li><a href="#the-counterfactual" id="toc-the-counterfactual" class="nav-link" data-scroll-target="#the-counterfactual"><span class="header-section-number">5.4</span> The counterfactual</a></li>
+  <li><a href="#visualisation-and-interaction" id="toc-visualisation-and-interaction" class="nav-link" data-scroll-target="#visualisation-and-interaction"><span class="header-section-number">5.5</span> Visualisation and interaction</a></li>
+  </ul></li>
   <li><a href="#prototype-and-storyboard" id="toc-prototype-and-storyboard" class="nav-link" data-scroll-target="#prototype-and-storyboard"><span class="header-section-number">6</span> Prototype and Storyboard</a>
   <ul class="collapse">
   <li><a href="#case-the-symptom" id="toc-case-the-symptom" class="nav-link" data-scroll-target="#case-the-symptom"><span class="header-section-number">6.1</span> Case, the symptom</a></li>
@@ -314,7 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 26, 2026</p>
+      <p class="date">June 27, 2026</p>
     </div>
   </div>
   
@@ -334,50 +341,197 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="what-makes-this-different" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> What Makes This Different</h1>
 <p>Most analyses of an incident like this stop at what happened, who posted what and when. We wanted the application to answer a harder question, how healthy was the system at each moment, and what was pulling it down.</p>
-<p>So the application is built around a single idea, a System Health score that runs from 100 down to 0 across all 23 rounds. That one line shows the whole case at a glance, calm and high for the first twelve rounds, then collapsing through the crisis day. The score is not a black box. It is the average of four measurable forces, pressure, transparency, decision-making, and accountability, so a user can open the score up and see exactly which force was failing in any given hour. On top of that we let the user test the breach rather than just read about it, replaying the chain of events and switching interventions on and off to see what would have changed the outcome. Turning the breach into a health score you can decompose, and a chain you can rerun, is the part we think is new.</p>
+<p>So the application is built around a single idea, a System Health score that runs from 100 down to 0 across all 23 rounds. That one line shows the whole case at a glance, calm and high for the first twelve rounds, then collapsing through the crisis day. The score is not a black box. It is the average of four measurable forces, pressure, transparency, decision-making, and accountability, each normalised to its own worst moment in this incident, so a user can open the score up and see exactly which force was failing in any given hour. On top of that we let the user test the breach rather than just read about it, replaying the chain of events and switching interventions on and off to watch the health score recompute. Turning the breach into a health score you can decompose, and a chain you can rerun, is the part we think is new.</p>
 </section>
 <section id="problem-statement-and-objectives" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Problem Statement and Objectives</h1>
-<p>The raw data is a single JSON file. It holds 23 rounds, 912 messages, and 7 agents, and most of what matters is locked inside nested fields like the agents’ private reasoning. Reading it by hand is not realistic, and a fixed set of charts forces everyone to accept one analyst’s framing of the story. So we built an interactive Shiny application that lets a user investigate the breach on their own terms.</p>
-<p>With the application, a user can do five things. They can see the System Health of the whole case on one line and find the moments where it collapsed. They can break that health score into its four driving forces and see which one was failing at any point in time. They can map the team as a network and find out which agents were central to how decisions flowed, so the core of the breach stands apart from the edges. They can replay the breach hour and switch interventions on and off, testing what would have had to change for the embargo to hold. And from all of that they can reach a defensible verdict on the real question, whether this looks like a deliberate leak, an oversight failure, or something else.</p>
+<p>The raw data is a single JSON file holding 23 rounds, 912 messages, and 7 agents, and most of what matters is locked inside nested fields like the agents’ private reasoning. Reading it by hand is not realistic, and a fixed set of charts forces everyone to accept one analyst’s framing. So we are building an interactive Shiny application that lets a user investigate the breach on their own terms.</p>
+<p>With the application, a user can do five things.</p>
+<ol type="1">
+<li>See the System Health of the whole case on one line and find the moments where it collapsed.</li>
+<li>Break that health score into its four driving forces and see which one was failing at any point in time.</li>
+<li>Map the team as a network and find which agents were central to how decisions flowed, so the core of the breach stands apart from the edges.</li>
+<li>Replay the breach hour and switch interventions on and off, testing what would have had to change for the embargo to hold.</li>
+<li>Reach a defensible verdict on the real question, whether this looks like a deliberate leak, an oversight failure, or something else.</li>
+</ol>
 </section>
 <section id="the-data" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> The Data</h1>
-<p>The dataset is <code>MC1_final_00.json</code> from VAST Challenge 2026 Mini-Challenge 1. It contains 23 rounds. The first 13 are spaced one business day apart and cover the run up from 17 May to 4 June. The last 10 are hourly and cover the crisis itself on 5 June.</p>
-<p>Each round carries three blocks. The environment context gives the state of the world that hour, including a market snapshot with the stock price and sentiment. The communications block is the heart of it, holding all 912 messages. Every message records who sent it, which channel it went through, what type it was, a pointer to the message it replied to, the content itself, and for many of them an internal state field that captures what the agent was privately thinking. That private field is split into reacting, rationalizing, and deliberating. The participants block lists who was present in each round.</p>
-<p>In network terms the communications are link records, since each message ties a sender to a recipient and those ties build the reply network we analyse later.</p>
-<p>Seven agents take part. There is a Legal agent, a Platform-Trust agent, a PR agent, a Social-Manager agent, two interns, and a Judge agent that acts as the automated compliance monitor. Six channels appear. Some are monitored, like the team room and one to one chats. One is a private side huddle. Three are public, namely official posts, personal posts, and anonymous posts. The gap between the monitored channels and the unmonitored ones turns out to matter a great deal.</p>
-<p>There is one data quality issue we have to handle with care. The stock price field is reliable before the crisis but becomes contaminated on 5 June. It starts carrying junk values, including literal NaN entries and at least one number that is actually the company’s revenue rather than its share price. Because of that, we lean on market sentiment as a clean backbone signal for pressure over time, since it is recorded cleanly in every single round, and we treat the broken prices with care rather than pretending they form a smooth line.</p>
+<p>The dataset is <code>MC1_final_00.json</code> from VAST Challenge 2026 Mini-Challenge 1. It contains 23 rounds. The first 13 are spaced one business day apart and cover the run up from 17 May to 4 June. The last 10 are hourly and cover the crisis itself on 5 June. Each round carries an environment block, a communications block with all 912 messages, and a participants block.</p>
+<p>The table below lists the fields we rely on.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Block</th>
+<th>Field</th>
+<th>What we use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Environment</td>
+<td>market sentiment</td>
+<td>A clean sentiment reading every round, our backbone signal for pressure</td>
+</tr>
+<tr class="even">
+<td>Environment</td>
+<td>stock price</td>
+<td>The share price, reliable before the crisis and contaminated on 5 June</td>
+</tr>
+<tr class="odd">
+<td>Communications</td>
+<td>sender and recipient</td>
+<td>Who sent each message and to whom, the basis of the reply network</td>
+</tr>
+<tr class="even">
+<td>Communications</td>
+<td>channel</td>
+<td>One of six channels, monitored, private, or public</td>
+</tr>
+<tr class="odd">
+<td>Communications</td>
+<td>type</td>
+<td>The kind of message sent</td>
+</tr>
+<tr class="even">
+<td>Communications</td>
+<td>responding to</td>
+<td>A pointer to the message being replied to, used to build the reply links</td>
+</tr>
+<tr class="odd">
+<td>Communications</td>
+<td>content</td>
+<td>The message text itself</td>
+</tr>
+<tr class="even">
+<td>Communications</td>
+<td>internal state</td>
+<td>The agent’s private reasoning, split into reacting, rationalizing, and deliberating</td>
+</tr>
+<tr class="odd">
+<td>Participants</td>
+<td>present agents</td>
+<td>Which of the seven agents were active that round</td>
+</tr>
+</tbody>
+</table>
+<p>Seven agents take part, a Legal agent, a Platform-Trust agent, a PR agent, a Social-Manager agent, two interns, and a Judge agent that acts as the automated compliance monitor.</p>
+<p>Six channels appear, and the split between them is central to the analysis. The team room and one to one chats are monitored. A side huddle is a private channel off to the side. Official posts, personal posts, and anonymous posts are public. The move from monitored channels into the private and unattributable ones is one of the clearest signals in the whole case.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>One data quality issue we handle with care
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The stock price field is reliable before the crisis but becomes contaminated on 5 June, carrying junk values including literal NaN entries and at least one number that is the company’s revenue rather than its share price. Because of that we lean on market sentiment as the clean backbone signal for pressure, since it is recorded cleanly in every round, and we treat the broken prices with care rather than pretending they form a smooth line.</p>
+</div>
+</div>
 </section>
 <section id="methodology-and-analytical-approach" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Methodology and Analytical Approach</h1>
 <p>Our plan moves from raw JSON to a working application in three stages.</p>
-<p>First comes data preparation. We read the nested JSON without letting R simplify it automatically, so we keep control over the shape of the tables. Then we flatten it into tidy tables. One row per message, one row per round of world state, and a table of reply links built from the responding to field. This shared backbone feeds every part of the app.</p>
-<p>Next is the analysis, which has two halves. The first half is the System Health model. For each round we score four forces on the same footing and average them into one health number. Pressure comes from the market sentiment and the stock signal. Transparency comes from how much of the traffic moved into hidden and unattributable channels. Decision-making comes from how much steering came from agents acting outside their role. Accountability comes from whether the Judge met its three duties of escalation, responsiveness, and restraint, combined so that a single severe failure dominates rather than being averaged away. The second half is the network. We treat the replies as a graph and measure each agent’s role in it with several centrality measures, since each one answers a different question. Degree shows who is most active. Betweenness finds the brokers who sit between others, which points straight at who was central to the leak. Eigenvector shows who is tied to other influential agents. Closeness shows who could reach the team fastest when things moved hour by hour.</p>
-<p>Last is the visualisation and the interaction. Every view becomes something the user can control. They can move through time on a round slider, click any point on the health line to jump to that round, open each meter to see what drove it, switch the network between time windows and centrality measures, and replay the breach chain with interventions turned on or off. The whole point is to let people explore, not to hand them a fixed set of answers.</p>
+<section id="data-preparation" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="data-preparation"><span class="header-section-number">5.1</span> Data preparation</h2>
+<p>We read the nested JSON without letting R simplify it automatically, so we keep control over the shape of the tables, then flatten it into three tidy tables. One row per message, one row per round of world state, and a table of reply links built from the responding to field. Per round we also count the signals the health model needs, the volume in the side huddle, personal posts, and anonymous posts, the number of messages carrying each kind of private reasoning, and the Judge’s activity. This shared backbone feeds every part of the app.</p>
+</section>
+<section id="the-system-health-model" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="the-system-health-model"><span class="header-section-number">5.2</span> The System Health model</h2>
+<p>This is the analytical core. For each round we score four forces on the same footing, normalise each one from 0 to 100 against its own worst round in this incident, and combine them into a single health number.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>How the score is built
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>System Health equals 100 minus the average of the four normalised meters. Because it is a plain average of four equal parts, a drop of any size in one meter lifts health by a quarter of that amount. This is what makes the counterfactual later both honest and easy to read.</p>
+</div>
+</div>
+<p>The four meters are summarised below.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Meter</th>
+<th>What it measures</th>
+<th>Built from</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pressure</td>
+<td>The external strain on the team</td>
+<td>Market sentiment each round together with the stock signal, with the contaminated prices handled with care</td>
+</tr>
+<tr class="even">
+<td>Transparency</td>
+<td>How much of the conversation moved out of sight</td>
+<td>The share of messages in the covert and unattributable channels, the side huddle, personal posts, and anonymous posts</td>
+</tr>
+<tr class="odd">
+<td>Decision-making</td>
+<td>Whether the right agents were steering</td>
+<td>The share of steering messages sent by agents acting outside their assigned role</td>
+</tr>
+<tr class="even">
+<td>Accountability</td>
+<td>Whether the monitor did its job</td>
+<td>The Judge’s three duties of escalation, responsiveness, and restraint, combined so a single severe failure dominates rather than being averaged away</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-network" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="the-network"><span class="header-section-number">5.3</span> The network</h2>
+<p>We treat the replies as a directed weighted graph and measure each agent’s role with several centrality measures, since each one answers a different question. Degree shows who is most active. Betweenness finds the brokers who sit between others, which points straight at who was central to the leak. Eigenvector shows who is tied to other influential agents. Closeness shows who could reach the team fastest when events moved hour by hour. We compute the network twice, once for the calm weeks and once for the crisis day, so the two can be compared side by side.</p>
+</section>
+<section id="the-counterfactual" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="the-counterfactual"><span class="header-section-number">5.4</span> The counterfactual</h2>
+<p>Because health is 100 minus the average of four meters, reducing any meter by an amount lifts health by a quarter of it. The Sandbox uses this directly. As the user switches interventions on and off, the application recomputes each meter from the raw per round data and rebuilds the health score at the breach hour, so the user can see which single action breaks the chain and what combination is needed to return the system to the safe zone.</p>
+</section>
+<section id="visualisation-and-interaction" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="visualisation-and-interaction"><span class="header-section-number">5.5</span> Visualisation and interaction</h2>
+<p>Every view becomes something the user can control. They can move through time on a round slider, click any point on the health line to jump to that round, open each meter to see what drove it, switch the network between time windows and centrality measures, and replay the breach chain with interventions turned on or off. A short guided tour walks a first time visitor through the five key beats of the case. The charts are interactive throughout, with hover and click handled by ggiraph.</p>
+</section>
 </section>
 <section id="prototype-and-storyboard" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Prototype and Storyboard</h1>
 <p>The application is organised as six destinations. Together they take a user from the symptom, through the four underlying causes, to a tested conclusion.</p>
 <section id="case-the-symptom" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="case-the-symptom"><span class="header-section-number">6.1</span> Case, the symptom</h2>
-<p>The opening screen frames the investigation and introduces the seven agents. Its centrepiece is the System Health line across all 23 rounds, with the two lowest points marked. A user can click any point on the line to read what happened that round, and a round slider moves the whole application to that moment. This is where the user first sees the shape of the collapse.</p>
+<p>The opening screen frames the investigation and introduces the seven agents. Its centrepiece is the System Health line across all 23 rounds, with the two lowest points marked. A user can click any point on the line to read what happened that round, and a round slider moves the whole application to that moment.</p>
 </section>
 <section id="vital-signs-the-four-causes" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="vital-signs-the-four-causes"><span class="header-section-number">6.2</span> Vital Signs, the four causes</h2>
-<p>This screen opens the health score up into its four meters, each on its own tab. Pressure shows the market sentiment and the stock signal feeding the strain. Transparency shows the mix of open, private, and covert channels and how the talk moved off the record. Decision-making shows who was steering out of their role, with a chart of who held the public voice in the calm weeks against the crisis day. Accountability shows whether the Judge met its three duties, with a heatmap of where the oversight failed. Each meter feeds the single health score on equal footing.</p>
+<p>This screen opens the health score into its four meters, each on its own tab. Pressure shows the market sentiment and stock signal feeding the strain. Transparency shows the mix of open, private, and covert channels. Decision-making shows who was steering out of their role, with a chart of who held the public voice in the calm weeks against the crisis day. Accountability shows whether the Judge met its three duties, with a heatmap of where the oversight failed.</p>
 </section>
 <section id="network-who-was-at-the-centre" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="network-who-was-at-the-centre"><span class="header-section-number">6.3</span> Network, who was at the centre</h2>
-<p>A reply network of the seven agents, drawn from who responded to whom. Node size and colour carry the centrality measures, so the agents who brokered the flow of decisions stand out from those on the edges. A user can switch between centrality measures, pick a time window to compare the calm weeks against the crisis day, and click an agent to highlight its connections. This is where the user sees that the breach came from the core of the team rather than the fringe.</p>
+<p>A reply network of the seven agents, with node size and colour carrying the centrality measures, a switch between measures, and a time window to compare the calm weeks against the crisis day.</p>
 </section>
 <section id="sandbox-what-would-have-changed-it" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="sandbox-what-would-have-changed-it"><span class="header-section-number">6.4</span> Sandbox, what would have changed it</h2>
-<p>A replay of the breach chain, step by step, with a panel of interventions the user can switch on and off. As interventions change, the application recomputes the health at the breach hour from the underlying data, so the user can see which single action breaks the chain and what combination is needed to return the system to the safe zone. This turns the counterfactual question into something a user can test rather than take on trust.</p>
+<p>A replay of the breach chain, step by step, with a panel of interventions the user can switch on and off while the health at the breach hour recomputes from the underlying data.</p>
 </section>
 <section id="verdict-the-conclusion" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="verdict-the-conclusion"><span class="header-section-number">6.5</span> Verdict, the conclusion</h2>
-<p>The closing screen lays out the three competing explanations, a deliberate leak, an oversight breakdown, and a compounding chain, and walks through the evidence for and against each. It lands on the reading the data supports, that the breach was a chain of locally defensible steps rather than a single act of wrongdoing.</p>
+<p>The closing screen lays out the three competing explanations, a deliberate leak, an oversight breakdown, and a compounding chain, and walks through the evidence for and against each before landing on the reading the data supports.</p>
 </section>
 </section>
 <section id="r-packages" class="level1" data-number="7">
@@ -400,11 +554,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td>jsonlite</td>
-<td>Reading the nested JSON</td>
+<td>Reading the nested JSON without auto simplification</td>
 </tr>
 <tr class="odd">
 <td>lubridate</td>
-<td>Working with the timestamps</td>
+<td>Working with the round timestamps</td>
 </tr>
 <tr class="even">
 <td>tidygraph, ggraph</td>
