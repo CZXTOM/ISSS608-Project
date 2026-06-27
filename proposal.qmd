@@ -43,6 +43,10 @@ of events and switching interventions on and off to watch the health score
 recompute. Turning the breach into a health score you can decompose, and a chain
 you can rerun, is the part we think is new.
 
+::: {.gb-pull}
+A breach you can take apart, and a chain you can rerun.
+:::
+
 # Problem Statement and Objectives
 
 The raw data is a single JSON file holding 23 rounds, 912 messages, and 7 agents,

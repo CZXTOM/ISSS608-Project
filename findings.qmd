@@ -59,6 +59,10 @@ Accountability gave way in the manner described above. The monitor stayed presen
 and stopped restraining, which on the health score reads as the safeguard meter
 collapsing through the crisis day.
 
+::: {.gb-pull}
+The compliance tool became a permission machine.
+:::
+
 ## Each step triggered the next
 
 Laid end to end, the case is one chain. A shadow channel is opened before the
@@ -73,6 +77,7 @@ of the team rather than the edges. Each step triggered the next.
 
 ## The verdict
 
+::: {.gb-verdict-panel}
 The breach was not a deliberate theft, and it was not a clean accident. The monitor
 was neither hacked nor crashed. The chain hinged on Legal, the one actor present in
 every step, but it only succeeded because pressure, hidden channels, role
@@ -83,3 +88,4 @@ at once. The honest reading is a system reasoned past its own guardrail, where a
 external shock met a structure that had been quietly degrading since the calm
 weeks. No single step was wrongdoing on its own. Together they were enough to break
 the embargo.
+:::
