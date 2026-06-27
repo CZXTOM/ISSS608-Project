@@ -225,6 +225,18 @@ main.content > section.level2 > h2::before {
 }
 .gb-verdict-panel > :last-child { margin-bottom: 0; }
 
+/* team page, the role label under each member name */
+.gb-member-role {
+  display: inline-block;
+  font-family: var(--gb-mono);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gb-blue);
+  margin: -.2rem 0 .8rem;
+}
+
 main.content p,
 main.content li { color: #2c3b42; }
 

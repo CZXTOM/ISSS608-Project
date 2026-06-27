@@ -95,28 +95,28 @@
     "href": "about.html",
     "title": "The Team",
     "section": "",
-    "text": "We are three MITB students at Singapore Management University, working on this project for ISSS608 Visual Analytics and Applications.\nEach of us first investigated the TenantThread embargo breach on our own in Take-home Exercise 2, and we independently reached the same reading of the case. We then brought our three approaches together into one investigation console, GLASSBOX, built around a single system health score that anyone can take apart and test."
+    "text": "We are three MITB students at Singapore Management University, working on this project for ISSS608 Visual Analytics and Applications. Each of us first investigated the TenantThread embargo breach on our own in Take-home Exercise 2 and reached the same reading of the case, then combined our three approaches into one investigation console, GLASSBOX.\nWe wrote the proposal, the minutes of meeting, and the user guide together, and reviewed each other’s work throughout. The build itself was divided into clear sub-modules, each owned by one of us, so that the application is a set of well defined parts rather than one person’s work. The split is described below."
   },
   {
     "objectID": "about.html#chen-zexin",
     "href": "about.html#chen-zexin",
     "title": "The Team",
     "section": "Chen ZeXin",
-    "text": "Chen ZeXin\nBuilt the GLASSBOX application and the system health model that runs through it, from the four meters and the network view to the counterfactual sandbox, along with the project website."
+    "text": "Chen ZeXin\nApplication architecture, System Health model, and website\nChen owned the overall shape of the application and the model at its centre.\n\nDesigned the structure of the GLASSBOX application, the six destinations from Case through Verdict, and built it in R and Shiny with a separate module file for each tab.\nBuilt the System Health model that runs through the whole app, the four-meter composition and the score that tracks all 23 rounds, normalised to each force’s worst moment.\nBuilt the Sandbox, the counterfactual engine that recomputes the breach-hour health as interventions are switched on and off.\nDesigned the interaction model, the round slider, the click to jump health line, the five-step guided tour, and the interactive charts built with ggiraph.\nBuilt and styled the project website in Quarto, the forensic design system and the scroll animations, and handled deployment to shinyapps.io and Vercel."
   },
   {
     "objectID": "about.html#meng-tingyu",
     "href": "about.html#meng-tingyu",
     "title": "The Team",
     "section": "Meng Tingyu",
-    "text": "Meng Tingyu\nLed the data preparation and the analysis of the agents’ private reasoning, the shift from deliberation to reaction to justification over the course of the case."
+    "text": "Meng Tingyu\nData preparation and behavioural analysis\nTingyu owned the data foundation and the analysis of how the agents behaved.\n\nLed the data mining and preparation, reading the nested MC1 JSON without automatic simplification and flattening it into the tidy message, round, and reply tables that feed every part of the app.\nDiagnosed the contaminated stock field on the crisis day and established market sentiment as the clean backbone signal for the Pressure meter.\nBuilt the Transparency and Decision-making meters, the measure of how much traffic moved into hidden channels and the measure of out-of-role steering.\nAnalysed the agents’ private reasoning, tracing the drift from deliberation to reaction to justification and the language used to make the leak look compliant.\nOwned the Pressure, Transparency, and Decision-making content on the Vital Signs tab."
   },
   {
     "objectID": "about.html#meng-xinyu",
     "href": "about.html#meng-xinyu",
     "title": "The Team",
     "section": "Meng Xinyu",
-    "text": "Meng Xinyu\nLed the network analysis and the comparison of normal against crisis behaviour, finding the decision core and the off-pattern actions that pointed to it."
+    "text": "Meng Xinyu\nNetwork, accountability, and the verdict\nXinyu owned the relational view of the team and the case for the conclusion.\n\nBuilt the reply network from the responding to links and computed the centrality measures, degree, betweenness, eigenvector, and closeness, with the calm weeks set against the crisis day.\nBuilt the Accountability meter, scoring the Judge’s three duties of escalation, responsiveness, and restraint, and the heatmap of where the oversight failed.\nDeveloped the Verdict, the three competing explanations and the domino chain that the evidence supports, with the unlock logic that walks a user through it.\nOwned the Network and Verdict tabs.\nLed the design and layout of the project poster."
   },
   {
     "objectID": "proposal.html",
