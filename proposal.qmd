@@ -4,10 +4,10 @@ subtitle: "Anatomy of an Embargo Breach"
 author: "Chen ZeXin, Meng Tingyu, Meng Xinyu"
 date: "last-modified"
 toc: true
-number-sections: true
+number-sections: false
 ---
 
-# Motivation
+## Motivation
 
 A merger between TenantThread and CivicLoom Realty Partners was meant to stay
 secret until 6:00 PM on 5 June 2046. In the final hour before that deadline, the
@@ -25,7 +25,7 @@ to be seen. Our goal is to take all that buried evidence and turn it into
 something an investigator can explore directly, even if they have never written a
 line of code.
 
-# What Makes This Different
+## What Makes This Different
 
 Most analyses of an incident like this stop at what happened, who posted what and
 when. We wanted the application to answer a harder question, how healthy was the
@@ -47,7 +47,7 @@ you can rerun, is the part we think is new.
 A breach you can take apart, and a chain you can rerun.
 :::
 
-# Problem Statement and Objectives
+## Problem Statement and Objectives
 
 The raw data is a single JSON file holding 23 rounds, 912 messages, and 7 agents,
 and most of what matters is locked inside nested fields like the agents' private
@@ -68,7 +68,7 @@ With the application, a user can do five things.
 5. Reach a defensible verdict on the real question, whether this looks like a
    deliberate leak, an oversight failure, or something else.
 
-# The Data
+## The Data
 
 The dataset is `MC1_final_00.json` from VAST Challenge 2026 Mini-Challenge 1. It
 contains 23 rounds. The first 13 are spaced one business day apart and cover the
@@ -100,9 +100,7 @@ off to the side. Official posts, personal posts, and anonymous posts are public.
 The move from monitored channels into the private and unattributable ones is one
 of the clearest signals in the whole case.
 
-::: {.callout-important}
-## One data quality issue we handle with care
-
+::: {.callout-important title="One data quality issue we handle with care"}
 The stock price field is reliable before the crisis but becomes contaminated on 5
 June, carrying junk values including literal NaN entries and at least one number
 that is the company's revenue rather than its share price. Because of that we lean
@@ -111,11 +109,11 @@ recorded cleanly in every round, and we treat the broken prices with care rather
 than pretending they form a smooth line.
 :::
 
-# Methodology and Analytical Approach
+## Methodology and Analytical Approach
 
 Our plan moves from raw JSON to a working application in three stages.
 
-## Data preparation
+### Data preparation
 
 We read the nested JSON without letting R simplify it automatically, so we keep
 control over the shape of the tables, then flatten it into three tidy tables. One
@@ -125,15 +123,13 @@ model needs, the volume in the side huddle, personal posts, and anonymous posts,
 the number of messages carrying each kind of private reasoning, and the Judge's
 activity. This shared backbone feeds every part of the app.
 
-## The System Health model
+### The System Health model
 
 This is the analytical core. For each round we score four forces on the same
 footing, normalise each one from 0 to 100 against its own worst round in this
 incident, and combine them into a single health number.
 
-::: {.callout-tip}
-## How the score is built
-
+::: {.callout-tip title="How the score is built"}
 System Health equals 100 minus the average of the four normalised meters. Because
 it is a plain average of four equal parts, a drop of any size in one meter lifts
 health by a quarter of that amount. This is what makes the counterfactual later
@@ -149,7 +145,7 @@ The four meters are summarised below.
 | Decision-making | Whether the right agents were steering | The share of steering messages sent by agents acting outside their assigned role |
 | Accountability | Whether the monitor did its job | The Judge's three duties of escalation, responsiveness, and restraint, combined so a single severe failure dominates rather than being averaged away |
 
-## The network
+### The network
 
 We treat the replies as a directed weighted graph and measure each agent's role
 with several centrality measures, since each one answers a different question.
@@ -159,7 +155,7 @@ who is tied to other influential agents. Closeness shows who could reach the tea
 fastest when events moved hour by hour. We compute the network twice, once for the
 calm weeks and once for the crisis day, so the two can be compared side by side.
 
-## The counterfactual
+### The counterfactual
 
 Because health is 100 minus the average of four meters, reducing any meter by an
 amount lifts health by a quarter of it. The Sandbox uses this directly. As the
@@ -168,7 +164,7 @@ the raw per round data and rebuilds the health score at the breach hour, so the
 user can see which single action breaks the chain and what combination is needed
 to return the system to the safe zone.
 
-## Visualisation and interaction
+### Visualisation and interaction
 
 Every view becomes something the user can control. They can move through time on a
 round slider, click any point on the health line to jump to that round, open each
@@ -177,19 +173,19 @@ measures, and replay the breach chain with interventions turned on or off. A sho
 guided tour walks a first time visitor through the five key beats of the case. The
 charts are interactive throughout, with hover and click handled by ggiraph.
 
-# Prototype and Storyboard
+## Prototype and Storyboard
 
 The application is organised as six destinations. Together they take a user from
 the symptom, through the four underlying causes, to a tested conclusion.
 
-## Case, the symptom
+### Case, the symptom
 
 The opening screen frames the investigation and introduces the seven agents. Its
 centrepiece is the System Health line across all 23 rounds, with the two lowest
 points marked. A user can click any point on the line to read what happened that
 round, and a round slider moves the whole application to that moment.
 
-## Vital Signs, the four causes
+### Vital Signs, the four causes
 
 This screen opens the health score into its four meters, each on its own tab.
 Pressure shows the market sentiment and stock signal feeding the strain.
@@ -198,25 +194,25 @@ shows who was steering out of their role, with a chart of who held the public
 voice in the calm weeks against the crisis day. Accountability shows whether the
 Judge met its three duties, with a heatmap of where the oversight failed.
 
-## Network, who was at the centre
+### Network, who was at the centre
 
 A reply network of the seven agents, with node size and colour carrying the
 centrality measures, a switch between measures, and a time window to compare the
 calm weeks against the crisis day.
 
-## Sandbox, what would have changed it
+### Sandbox, what would have changed it
 
 A replay of the breach chain, step by step, with a panel of interventions the user
 can switch on and off while the health at the breach hour recomputes from the
 underlying data.
 
-## Verdict, the conclusion
+### Verdict, the conclusion
 
 The closing screen lays out the three competing explanations, a deliberate leak,
 an oversight breakdown, and a compounding chain, and walks through the evidence for
 and against each before landing on the reading the data supports.
 
-# R Packages
+## R Packages
 
 | Package | What we use it for |
 |---|---|
@@ -230,7 +226,7 @@ and against each before landing on the reading the data supports.
 | openxlsx | Building the downloadable scoring workbook |
 | shiny, bslib, shinyWidgets | Building the interactive application itself |
 
-# Project Schedule
+## Project Schedule
 
 The Gantt chart below lays out our timeline from the proposal through to final
 submission. The main dates we are working toward are the proposal on 10 June, the
