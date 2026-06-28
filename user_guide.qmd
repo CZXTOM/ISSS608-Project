@@ -53,7 +53,7 @@ exploration, and at the top right is a button to download the scoring workbook.
 ::: {.gb-shot}
 ![The GLASSBOX console on first load, with the round slider and System Health gauge along the top and the health line on the Case screen below.](images/ug-01-overview.png)
 
-The main screen. The numbered labels mark the round slider, the System Health gauge, the mode switch, and the workbook button.
+The main screen. The numbered badges mark the mode switch (1), the round slider (2), the Scoring workbook button (3), and the System Health gauge (4).
 :::
 
 The health score uses three colour zones throughout the app, so a glance tells you
@@ -120,15 +120,17 @@ Vital Signs. The four tabs are the four forces. Switch between them to see which
 edges.** The "Network" screen draws the reply network from who responded to whom.
 
 1. Open the "Network" tab.
-2. Use the centrality switch to change what node size and colour mean, since each
-   measure answers a different question.
-3. Use the time window to compare the calm weeks against the crisis day.
-4. Click an agent to highlight its connections.
+2. Set the time window to compare the calm weeks against the crisis day, and use
+   the channels toggle to switch between the open traffic and the covert traffic.
+3. Use centre on to focus the graph on one agent, or set graph shows to whole team
+   to see everyone at once.
+4. Read the graph. Node size is how active an agent was, blue links are open
+   channels and orange links are covert, and thicker links carry more messages.
 
 ::: {.gb-shot}
-![The Network screen with the seven agents as nodes, sized and coloured by centrality, and the controls to switch measure and time window.](images/ug-05-network.png)
+![The Network screen with the seven agents as nodes sized by how active each was, the open and covert links between them, and the controls for the time window, the channels, and which agent to centre on.](images/ug-05-network.png)
 
-The Network screen. The agents who brokered the decisions sit at the centre, not the edges.
+The Network screen. The agents who brokered the decisions sit at the busy centre of the traffic, not the edges.
 :::
 
 ## Test what would have changed it
