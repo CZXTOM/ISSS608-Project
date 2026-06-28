@@ -20,7 +20,7 @@ website:
         href: https://zexinchen.shinyapps.io/shiny/
         target: _blank
       - href: about.qmd
-        text: About
+        text: Team
     right:
       - icon: github
         href: https://github.com/CZXTOM/ISSS608-Project

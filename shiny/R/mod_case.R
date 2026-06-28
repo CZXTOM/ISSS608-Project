@@ -9,7 +9,7 @@ caseUI <- function(id) {
         htmltools::span("The Case",
           style = sprintf("font-size:1.5rem; font-weight:800; color:%s;", COL$ink))),
       htmltools::p(htmltools::HTML(
-        "A property-tech company, TenantThread, ran a team of AI agents to manage corporate communications. A merger sat under a strict information embargo until 6:00 PM on 5 June 2046, with an automated compliance monitor, the Judge, installed to prevent leaks. At 5:00 PM, one hour before the embargo lifted, the company's own automated accounts confirmed the merger in public. The embargo broke.")),
+        "A property-tech company, TenantThread, ran a team of AI agents to manage corporate communications. A merger sat under a strict information embargo until 6:00 PM on 5 June 2046, with an automated compliance monitor, the Judge, installed to prevent leaks. At 5:25 PM, 35 minutes before the embargo lifted, the company's own automated accounts confirmed the merger in public. The embargo broke.")),
       htmltools::p("You are the investigator, and your question is simple."),
       htmltools::tags$details(
         style = sprintf("border-left:4px solid %s;background:%s;padding:12px 16px;border-radius:0 6px 6px 0;margin:2px 0 12px;",
