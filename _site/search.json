@@ -67,7 +67,7 @@
     "href": "user_guide.html#read-the-case",
     "title": "User Guide",
     "section": "Read the case",
-    "text": "Read the case\nStart here to see the shape of the whole case. The “Case” screen introduces the seven agents and shows the System Health line across all 23 rounds, with the two lowest points marked.\n\nOpen the “Case” tab.\nClick any point on the health line to read what happened that round.\nNotice that clicking also moves the slider and the rest of the app to that moment, so you can carry a round across the other screens.\n\n\n\n\n\nThe Case screen with the System Health line across 23 rounds, a low point clicked, and a panel describing what happened that round.\n\n\nThe Case screen. Click any point on the line to read that round and move the whole app to it."
+    "text": "Read the case\nStart here to see the shape of the whole case. The “Case” screen introduces the seven agents and shows the System Health line across all 23 rounds, with the two lowest points marked.\n\nOpen the “Case” tab.\nClick any point on the health line to read what happened that round.\nNotice that clicking also moves the slider and the rest of the app to that moment, so you can carry a round across the other screens.\n\n\n\n\n\nThe System Health line across all 23 rounds with a round selected, and the panel below describing what happened that round.\n\n\nThe Case screen. Click any point on the line to read that round and move the whole app to it."
   },
   {
     "objectID": "user_guide.html#see-which-force-was-failing",

@@ -92,7 +92,7 @@ lowest points marked.
    moment, so you can carry a round across the other screens.
 
 ::: {.gb-shot}
-![The Case screen with the System Health line across 23 rounds, a low point clicked, and a panel describing what happened that round.](images/ug-03-case.png)
+![The System Health line across all 23 rounds with a round selected, and the panel below describing what happened that round.](images/ug-03-case.png)
 
 The Case screen. Click any point on the line to read that round and move the whole app to it.
 :::
