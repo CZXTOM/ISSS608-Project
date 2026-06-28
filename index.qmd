@@ -21,19 +21,35 @@ toc: false
         <a href="#story" class="gb-btn gb-btn-ghost">See the story</a>
       </div>
       <div class="gb-hero-chart">
-        <svg viewBox="0 0 1000 280" preserveAspectRatio="xMidYMid meet" role="img" aria-label="System health across the case, collapsing into the breach">
+        <svg viewBox="0 0 1000 280" preserveAspectRatio="xMidYMid meet" role="img" aria-label="System health across the case, starting calm and collapsing into the breach at 17:25">
+          <defs>
+            <linearGradient id="gb-hero-fill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2C7FB8" stop-opacity="0.18"/>
+              <stop offset="55%" stop-color="#2C7FB8" stop-opacity="0.05"/>
+              <stop offset="100%" stop-color="#D9661F" stop-opacity="0.11"/>
+            </linearGradient>
+          </defs>
           <rect x="40" y="40" width="920" height="90" fill="#2C7FB8" opacity="0.05"/>
           <rect x="40" y="130" width="920" height="50" fill="#E8A33D" opacity="0.06"/>
           <rect x="40" y="180" width="920" height="60" fill="#D9661F" opacity="0.06"/>
           <line x1="40" y1="130" x2="960" y2="130" stroke="#2C7FB8" stroke-width="1" stroke-dasharray="4 5" opacity="0.35"/>
+          <text x="52" y="58" font-family="IBM Plex Mono, monospace" font-size="13" fill="#6B7B83">healthy</text>
+          <text x="52" y="232" font-family="IBM Plex Mono, monospace" font-size="13" fill="#D9661F">critical</text>
           <line x1="900" y1="40" x2="900" y2="240" stroke="#C0392B" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.55"/>
-          <path class="gb-line-path" stroke="#2C7FB8" d="M60,40.6 L180,56.4 L300,56.6 L380,61.6 L580,162.8 L620,142 L660,181.6 L700,213.2 L740,169.2 L780,184.6 L820,176.8 L860,163 L900,210.6 L940,180.8"/>
+          <path fill="url(#gb-hero-fill)" stroke="none" d="M60,40.6 L180,56.4 L300,56.6 L380,61.6 L580,162.8 L620,142 L660,181.6 L700,213.2 L740,169.2 L780,184.6 L820,176.8 L860,163 L900,210.6 L900,240 L60,240 Z"/>
+          <path class="gb-line-path" stroke="#2C7FB8" d="M60,40.6 L180,56.4 L300,56.6 L380,61.6 L580,162.8 L620,142 L660,181.6 L700,213.2 L740,169.2 L780,184.6 L820,176.8 L860,163 L900,210.6"/>
+          <circle class="gb-dot" cx="60" cy="40.6" r="5" fill="#2C7FB8"/>
+          <text class="gb-dot" x="74" y="36" font-family="IBM Plex Mono, monospace" font-size="12" fill="#6B7B83">calm</text>
           <circle class="gb-dot" cx="900" cy="210.6" r="6" fill="#C0392B"/>
           <text class="gb-dot" x="900" y="263" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#C0392B">breach &middot; 17:25</text>
         </svg>
       </div>
+      <p style="text-align:center; margin:1.1rem 0 0; font-family:'IBM Plex Sans',system-ui,sans-serif; font-size:1.05rem; color:#27333A;">System health across the whole case.</p>
+      <p style="text-align:center; margin:.35rem 0 0; font-family:'IBM Plex Sans',system-ui,sans-serif; font-size:.95rem; color:#6B7B83;">Two calm weeks, then a fast slide. Scroll to see why.</p>
+      <div style="text-align:center; margin-top:.6rem;" aria-hidden="true">
+        <svg width="22" height="13" viewBox="0 0 22 13"><path d="M4,3.5 L11,9.5 L18,3.5" fill="none" stroke="#6B7B83" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
     </div>
-    <div class="gb-scrollcue">scroll<span></span></div>
   </section>
 
   <!-- ============ BEAT 1 ============ -->
