@@ -16,6 +16,7 @@ toc: false
       <div class="gb-label">VAST Challenge 2026 &middot; Mini-Challenge 1</div>
       <h1>Anatomy of an<br>Embargo Breach</h1>
       <p class="gb-hero-sub">A forensic investigation into how a team of AI communication agents broke a corporate merger embargo, 35 minutes before it was due to lift.</p>
+      <div class="gb-hero-group" style="color:#2C7FB8;font-family:'IBM Plex Mono', monospace;font-size:0.95rem;letter-spacing:0.06em;font-weight:600;margin-top:0.5rem;">Group 9</div>
       <div class="gb-hero-cta">
         <a href="https://zexinchen.shinyapps.io/shiny/" target="_blank" class="gb-btn gb-btn-primary">Launch the GLASSBOX app</a>
         <a href="#story" class="gb-btn gb-btn-ghost">See the story</a>
