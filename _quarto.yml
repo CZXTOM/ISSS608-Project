@@ -12,6 +12,8 @@ website:
         text: Proposal
       - href: findings.qmd
         text: Findings
+      - href: timeline.qmd
+        text: Timeline
       - href: poster.qmd
         text: Poster
       - href: user_guide.qmd
