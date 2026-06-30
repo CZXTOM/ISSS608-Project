@@ -151,7 +151,7 @@
     "href": "proposal.html#what-makes-this-different",
     "title": "Project Proposal",
     "section": "What Makes This Different",
-    "text": "What Makes This Different\nMost analyses of an incident like this stop at what happened, who posted what and when. We wanted the application to answer a harder question, how healthy was the system at each moment, and what was pulling it down.\nSo the application is built around a single idea, a System Health score that runs from 100 down to 0 across all 23 rounds. That one line shows the whole case at a glance, calm and high for the first twelve rounds, then collapsing through the crisis day. The score is not a black box. It is the average of four measurable forces, pressure, transparency, decision-making, and accountability, each normalised to its own worst moment in this incident, so a user can open the score up and see exactly which force was failing in any given hour. On top of that we let the user test the breach rather than just read about it, replaying the chain of events and switching interventions on and off to watch the health score recompute. Turning the breach into a health score you can decompose, and a chain you can rerun, is the part we think is new.\n\nA breach you can take apart, and a chain you can rerun."
+    "text": "What Makes This Different\nMost analyses of an incident like this stop at what happened, who posted what and when. We wanted the application to answer a harder question, how healthy was the system at each moment, and what was pulling it down.\nSo the application is built around a single idea, a System Health score that runs from 100 down to 0 across all 23 rounds. That one line shows the whole case at a glance, calm and high for the first twelve rounds, then collapsing through the crisis day. The score is not a black box. It is the average of four measurable forces, pressure, transparency, decision-making, and accountability, each normalised to its own worst moment in this incident, so a user can open the score up and see exactly which force was failing in any given hour. On top of that we let the user test the breach rather than just read about it, replaying the chain of events and switching interventions on and off to watch the health score recompute. Turning the breach into a health score you can open up force by force, and a chain of events you can replay with different fixes, is the part we think is new.\n\nThe breach becomes a health score you can open up to see which force was failing, and a chain of events you can replay to test what would have stopped it."
   },
   {
     "objectID": "proposal.html#problem-statement-and-objectives",
@@ -187,12 +187,5 @@
     "title": "Project Proposal",
     "section": "R Packages",
     "text": "R Packages\n\n\n\n\n\n\n\nPackage\nWhat we use it for\n\n\n\n\ntidyverse\nCleaning and reshaping the data\n\n\njsonlite\nReading the nested JSON without auto simplification\n\n\nlubridate\nWorking with the round timestamps\n\n\ntidygraph, ggraph\nBuilding and drawing the reply network\n\n\nigraph\nCalculating network centrality measures\n\n\nggiraph\nInteractive charts with hover and click\n\n\nggrepel, patchwork, scales\nLabelling, composing, and formatting figures\n\n\nopenxlsx\nBuilding the downloadable scoring workbook\n\n\nshiny, bslib, shinyWidgets\nBuilding the interactive application itself"
-  },
-  {
-    "objectID": "proposal.html#project-schedule",
-    "href": "proposal.html#project-schedule",
-    "title": "Project Proposal",
-    "section": "Project Schedule",
-    "text": "Project Schedule\nThe Gantt chart below lays out our timeline from the proposal through to final submission. The main dates we are working toward are the proposal on 10 June, the bulk of the app build through late June, the poster on 1 July, the presentation on 4 July, and the final submission on 5 July.\n\npacman::p_load(vistime, ggplot2)\nschedule &lt;- read.csv(text = \"event,group,start,end\n,Proposal,2026-06-06,2026-06-10\n,Data preparation,2026-06-08,2026-06-16\n,Shiny app development,2026-06-12,2026-06-30\n,Project website,2026-06-08,2026-07-04\n,Poster,2026-06-24,2026-07-01\n,User guide,2026-06-26,2026-07-04\n,Final submission,2026-07-04,2026-07-05\")\ngg_vistime(schedule, title = \"Project Timeline\")"
   }
 ]

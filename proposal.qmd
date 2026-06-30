@@ -40,11 +40,12 @@ normalised to its own worst moment in this incident, so a user can open the scor
 up and see exactly which force was failing in any given hour. On top of that we
 let the user test the breach rather than just read about it, replaying the chain
 of events and switching interventions on and off to watch the health score
-recompute. Turning the breach into a health score you can decompose, and a chain
-you can rerun, is the part we think is new.
+recompute. Turning the breach into a health score you can open up force by force, and a
+chain of events you can replay with different fixes, is the part we think is new.
 
 ::: {.gb-pull}
-A breach you can take apart, and a chain you can rerun.
+The breach becomes a health score you can open up to see which force was failing,
+and a chain of events you can replay to test what would have stopped it.
 :::
 
 ## Problem Statement and Objectives
@@ -231,26 +232,3 @@ and against each before landing on the reading the data supports.
 | ggrepel, patchwork, scales | Labelling, composing, and formatting figures |
 | openxlsx | Building the downloadable scoring workbook |
 | shiny, bslib, shinyWidgets | Building the interactive application itself |
-
-## Project Schedule
-
-The Gantt chart below lays out our timeline from the proposal through to final
-submission. The main dates we are working toward are the proposal on 10 June, the
-bulk of the app build through late June, the poster on 1 July, the presentation on
-4 July, and the final submission on 5 July.
-
-```{r}
-#| label: gantt
-#| eval: false
-#| code-summary: "Gantt chart code (vistime)"
-pacman::p_load(vistime, ggplot2)
-schedule <- read.csv(text = "event,group,start,end
-,Proposal,2026-06-06,2026-06-10
-,Data preparation,2026-06-08,2026-06-16
-,Shiny app development,2026-06-12,2026-06-30
-,Project website,2026-06-08,2026-07-04
-,Poster,2026-06-24,2026-07-01
-,User guide,2026-06-26,2026-07-04
-,Final submission,2026-07-04,2026-07-05")
-gg_vistime(schedule, title = "Project Timeline")
-```

@@ -25,41 +25,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -294,7 +259,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#verdict-the-conclusion" id="toc-verdict-the-conclusion" class="nav-link" data-scroll-target="#verdict-the-conclusion">Verdict, the conclusion</a></li>
   </ul></li>
   <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R Packages</a></li>
-  <li><a href="#project-schedule" id="toc-project-schedule" class="nav-link" data-scroll-target="#project-schedule">Project Schedule</a></li>
   </ul>
 </nav>
     </div>
@@ -341,9 +305,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="what-makes-this-different" class="level2">
 <h2 class="anchored" data-anchor-id="what-makes-this-different">What Makes This Different</h2>
 <p>Most analyses of an incident like this stop at what happened, who posted what and when. We wanted the application to answer a harder question, how healthy was the system at each moment, and what was pulling it down.</p>
-<p>So the application is built around a single idea, a System Health score that runs from 100 down to 0 across all 23 rounds. That one line shows the whole case at a glance, calm and high for the first twelve rounds, then collapsing through the crisis day. The score is not a black box. It is the average of four measurable forces, pressure, transparency, decision-making, and accountability, each normalised to its own worst moment in this incident, so a user can open the score up and see exactly which force was failing in any given hour. On top of that we let the user test the breach rather than just read about it, replaying the chain of events and switching interventions on and off to watch the health score recompute. Turning the breach into a health score you can decompose, and a chain you can rerun, is the part we think is new.</p>
+<p>So the application is built around a single idea, a System Health score that runs from 100 down to 0 across all 23 rounds. That one line shows the whole case at a glance, calm and high for the first twelve rounds, then collapsing through the crisis day. The score is not a black box. It is the average of four measurable forces, pressure, transparency, decision-making, and accountability, each normalised to its own worst moment in this incident, so a user can open the score up and see exactly which force was failing in any given hour. On top of that we let the user test the breach rather than just read about it, replaying the chain of events and switching interventions on and off to watch the health score recompute. Turning the breach into a health score you can open up force by force, and a chain of events you can replay with different fixes, is the part we think is new.</p>
 <div class="gb-pull">
-<p>A breach you can take apart, and a chain you can rerun.</p>
+<p>The breach becomes a health score you can open up to see which force was failing, and a chain of events you can replay to test what would have stopped it.</p>
 </div>
 </section>
 <section id="problem-statement-and-objectives" class="level2">
@@ -589,22 +553,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-</section>
-<section id="project-schedule" class="level2">
-<h2 class="anchored" data-anchor-id="project-schedule">Project Schedule</h2>
-<p>The Gantt chart below lays out our timeline from the proposal through to final submission. The main dates we are working toward are the proposal on 10 June, the bulk of the app build through late June, the poster on 1 July, the presentation on 4 July, and the final submission on 5 July.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(vistime, ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>schedule <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">text =</span> <span class="st">"event,group,start,end</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="st">,Proposal,2026-06-06,2026-06-10</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st">,Data preparation,2026-06-08,2026-06-16</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">,Shiny app development,2026-06-12,2026-06-30</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st">,Project website,2026-06-08,2026-07-04</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">,Poster,2026-06-24,2026-07-01</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">,User guide,2026-06-26,2026-07-04</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="st">,Final submission,2026-07-04,2026-07-05"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">gg_vistime</span>(schedule, <span class="at">title =</span> <span class="st">"Project Timeline"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 
 
 </section>
