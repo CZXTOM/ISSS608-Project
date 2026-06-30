@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Chen ZeXin, Meng Tingyu, Meng Xinyu">
-<meta name="dcterms.date" content="2026-06-27">
+<meta name="dcterms.date" content="2026-06-30">
 
 <title>Project Proposal – Anatomy of an Embargo Breach</title>
 <style>
@@ -321,7 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 27, 2026</p>
+      <p class="date">June 30, 2026</p>
     </div>
   </div>
   
@@ -348,7 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="problem-statement-and-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="problem-statement-and-objectives">Problem Statement and Objectives</h2>
-<p>The raw data is a single JSON file holding 23 rounds, 912 messages, and 7 agents, and most of what matters is locked inside nested fields like the agents’ private reasoning. Reading it by hand is not realistic, and a fixed set of charts forces everyone to accept one analyst’s framing. So we are building an interactive Shiny application that lets a user investigate the breach on their own terms.</p>
+<p>Investigators reconstructing TenantThread’s embargo breach have no practical way to read its two weeks of AI agent messages, deliberations, and public posts by hand. The raw data is a single JSON file holding 23 rounds, 912 messages, and 7 agents, with most of what matters locked inside nested fields like the agents’ private reasoning. The result is a breach that cannot be traced or fairly attributed to a deliberate leak or to a system that broke down under pressure. We investigate whether the breach was a deliberate leak, an oversight system failure, or a third possibility, where the safeguard was never hacked or crashed but was slowly argued out of doing its job. So we are building an interactive Shiny application that lets a user investigate the breach on their own terms, rather than accept one analyst’s fixed framing.</p>
 <p>With the application, a user can do five things.</p>
 <ol type="1">
 <li>See the System Health of the whole case on one line and find the moments where it collapsed.</li>
