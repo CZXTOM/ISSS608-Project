@@ -4,8 +4,8 @@ subtitle: "Who built what"
 toc: true
 ---
 
-We are three MITB students at Singapore Management University, working on this
-project for ISSS608 Visual Analytics and Applications. Each of us first
+We are Group 9, three MITB students at Singapore Management University, working
+on this project for ISSS608 Visual Analytics and Applications. Each of us first
 investigated the TenantThread embargo breach on our own in Take-home Exercise 2
 and reached the same reading of the case, then combined our three approaches into
 one investigation console, GLASSBOX.

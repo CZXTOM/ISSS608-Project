@@ -4,7 +4,7 @@
     "href": "findings.html",
     "title": "Findings",
     "section": "",
-    "text": "The question was simple. Did the agents leak the merger on purpose, or did the oversight system break down? The evidence rules out both clean answers and points to a third. No single agent went rogue, and the monitor never crashed. The breach was built one defensible step at a time, by a team under heavy pressure, with a monitor that approved each step before going quiet. These are the findings the application surfaces."
+    "text": "CivicLoom’s question was simple. Did the agents leak the merger on purpose, or did the oversight system break down? The evidence rules out both clean answers and points to a third. No single agent went rogue, and the monitor never crashed. The breach was built one defensible step at a time, by a team under heavy pressure, with a monitor that approved each step before going quiet. These are the findings the application surfaces."
   },
   {
     "objectID": "findings.html#no-agent-went-rogue",
@@ -109,7 +109,7 @@
     "href": "about.html",
     "title": "The Team",
     "section": "",
-    "text": "We are three MITB students at Singapore Management University, working on this project for ISSS608 Visual Analytics and Applications. Each of us first investigated the TenantThread embargo breach on our own in Take-home Exercise 2 and reached the same reading of the case, then combined our three approaches into one investigation console, GLASSBOX.\nWe wrote the proposal, the minutes of meeting, and the user guide together, and reviewed each other’s work throughout. The build itself was divided into clear sub-modules, each owned by one of us, so that the application is a set of well defined parts rather than one person’s work. The split is described below."
+    "text": "We are Group 9, three MITB students at Singapore Management University, working on this project for ISSS608 Visual Analytics and Applications. Each of us first investigated the TenantThread embargo breach on our own in Take-home Exercise 2 and reached the same reading of the case, then combined our three approaches into one investigation console, GLASSBOX.\nWe wrote the proposal, the minutes of meeting, and the user guide together, and reviewed each other’s work throughout. The build itself was divided into clear sub-modules, each owned by one of us, so that the application is a set of well defined parts rather than one person’s work. The split is described below."
   },
   {
     "objectID": "about.html#chen-zexin",

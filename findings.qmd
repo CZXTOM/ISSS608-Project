@@ -4,7 +4,7 @@ subtitle: "What the investigation concludes"
 toc: true
 ---
 
-The question was simple. Did the agents leak the merger on purpose, or
+CivicLoom's question was simple. Did the agents leak the merger on purpose, or
 did the oversight system break down? The evidence rules out both clean answers and
 points to a third. No single agent went rogue, and the monitor never crashed. The
 breach was built one defensible step at a time, by a team under heavy pressure,
